@@ -1,45 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 @import "tailwindcss";
 @plugin "daisyui";
 
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/*VARIABLES*/
+:root {
+  /*COLORS*/
+  --container-bg: #cae7b9;
+  --font-family: 'Figtree';
+
+  /*NUMBERS*/
+  --container-radius: 30px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+* {
+  font-family: var(--font-family), sans-serif;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  @apply m-[48px];
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.container {
+  @apply flex justify-center px-[100px] py-[85px] w-full rounded-[30px]; /*layout & spacing*/
+  /*bg should be added as a prop so it can be different*/
+  background-color: var(--container-bg);
+
+  p {
+    @apply  text-black;
   }
 }
 
-.card {
-  padding: 2em;
-}
+.container-with-title {
+  @apply flex flex-col gap-[24px] p-[24px] w-full rounded-[30px];
+  background-color: var(--container-bg);
 
-.read-the-docs {
-  color: #888;
+  p {
+    @apply  text-black;
+  }
+
+  h2 {
+    @apply text-black;
+  }
 }
