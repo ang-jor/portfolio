@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 @import "tailwindcss";
 @plugin "daisyui";
 
@@ -6,7 +6,7 @@
 :root {
   /*COLORS*/
   --container-bg: #cae7b9;
-  --font-family: 'Figtree';
+  --font-family: "Figtree";
 
   /*NUMBERS*/
   --container-radius: 30px;
@@ -16,18 +16,42 @@
   font-family: var(--font-family), sans-serif;
 }
 
+main {
+  @apply grid grid-cols-2 gap-[32px];
+}
+
 body {
   @apply m-[48px];
 }
 
+.avatar-img {
+  @apply flex-1 rounded-[30px];
+}
+
 .container {
-  @apply flex justify-center px-[100px] py-[85px] w-full rounded-[30px]; /*layout & spacing*/
+  @apply flex justify-center w-full rounded-[30px]; /*layout & spacing*/
   /*bg should be added as a prop so it can be different*/
   background-color: var(--container-bg);
 
   p {
-    @apply  text-black;
+    @apply text-black;
   }
+}
+
+.img-container {
+  @apply w-full min-w-[150px];
+}
+
+.row {
+  @apply flex gap-[32px] flex-wrap; /*layout & spacing*/
+
+  & > * {
+    @apply flex-1;
+  }
+}
+
+.col {
+  @apply flex flex-col gap-[32px];
 }
 
 .container-with-title {
@@ -35,7 +59,7 @@ body {
   background-color: var(--container-bg);
 
   p {
-    @apply  text-black;
+    @apply text-black;
   }
 
   h2 {
