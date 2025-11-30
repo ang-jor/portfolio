@@ -2,11 +2,29 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+html {
+  font-size: 16px;
+  @screen md {
+    font-size: 17px;
+  }
+  @screen lg {
+    font-size: 26px;
+  }
+}
+
 /*VARIABLES*/
 :root {
   /*COLORS*/
-  --container-bg: #cae7b9;
+
+  /*TYPO*/
   --font-family: "Figtree";
+
+  /*FLUID TEXT SIZES*/
+  --text-fluid-sm: clamp(0.875rem, 1vw, 1rem);
+  --text-fluid-base: clamp(1rem, 1.25vw, 1.25rem);
+  --text-fluid-lg: clamp(1.125rem, 1.5vw, 1.5rem);
+  --text-fluid-xl: clamp(1.5rem, 2vw, 2rem);
+  --text-fluid-2xl: clamp(2rem, 3vw, 3rem);
 
   /*NUMBERS*/
   --container-radius: 30px;
@@ -14,24 +32,31 @@
 
 * {
   font-family: var(--font-family), sans-serif;
+  transition: all 0.3s ease-in-out;
 }
 
 main {
-  @apply grid grid-cols-2 gap-[32px];
+  @apply flex gap-[32px] flex-wrap;
 }
 
 body {
-  @apply m-[48px];
+  @apply my-[48px] mx-auto w-5/6 sm:mx-[0px];
 }
 
 .avatar-img {
   @apply flex-1 rounded-[30px];
 }
 
+.welcome-content {
+  @apply flex flex-col text-center justify-center text-black;
+
+  h1 {
+   font-size: var(--text-fluid-xl);  
+  }
+}
+
 .container {
-  @apply flex justify-center w-full rounded-[30px]; /*layout & spacing*/
-  /*bg should be added as a prop so it can be different*/
-  background-color: var(--container-bg);
+  @apply flex justify-center w-full mx-auto rounded-[30px] min-h-[250px] max-w-none;
 
   p {
     @apply text-black;
@@ -39,24 +64,19 @@ body {
 }
 
 .img-container {
-  @apply w-full min-w-[150px];
-}
+  @apply max-w-[250px] max-h-[200px] min-w-[250px] min-h-[250px] hidden lg:flex;
 
-.row {
-  @apply flex gap-[32px] flex-wrap; /*layout & spacing*/
-
-  & > * {
-    @apply flex-1;
+  img {
+    @apply w-full h-full object-cover;
   }
 }
 
-.col {
-  @apply flex flex-col gap-[32px];
+.intro-container {
+  @apply min-w-[250px];
 }
 
 .container-with-title {
-  @apply flex flex-col gap-[24px] p-[24px] w-full rounded-[30px];
-  background-color: var(--container-bg);
+  @apply flex flex-col gap-[24px] p-[24px] w-full rounded-[30px] min-w-[300px] min-h-[250px];
 
   p {
     @apply text-black;
@@ -64,5 +84,22 @@ body {
 
   h2 {
     @apply text-black;
+    font-size: var(--text-fluid-base);
+  }
+}
+
+.row {
+  @apply flex gap-[32px];
+
+  & > * {
+    @apply flex-1;
+  }
+}
+
+.col {
+  @apply flex flex-col flex-1 gap-[32px] flex-wrap;
+
+  & > * {
+    @apply flex-1;
   }
 }
