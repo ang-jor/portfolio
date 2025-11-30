@@ -40,7 +40,7 @@ main {
 }
 
 body {
-  @apply my-[48px] mx-auto w-5/6  ;
+  @apply my-[48px] mx-auto w-5/6;
 }
 
 .avatar-img {
@@ -51,7 +51,7 @@ body {
   @apply flex flex-col text-center justify-center text-black;
 
   h1 {
-   font-size: var(--text-fluid-xl);  
+    font-size: var(--text-fluid-xl);
   }
 }
 
@@ -101,5 +101,43 @@ body {
 
   & > * {
     @apply flex-1;
+  }
+}
+
+.project-list {
+  @apply flex flex-col gap-[24px];
+
+  .project-item {
+    @apply flex gap-[16px] justify-between;
+
+    .project-item-content {
+      @apply flex gap-[16px];
+
+      .project-item-details {
+        @apply flex flex-col;
+      }
+
+      h3 {
+        @apply text-black;
+        font-size: var(--text-fluid-base);
+      }
+
+      p {
+        @apply text-black;
+        font-size: var(--text-fluid-sm);
+      }
+
+      .project-item-tags {
+        @apply flex gap-[8px] mt-[8px];
+      }
+    }
+
+    .arrow {
+      @apply size-[32px] self-center hidden;
+    }
+
+    &:hover .arrow {
+      @apply flex;
+    }
   }
 }
