@@ -40,7 +40,7 @@ main {
 }
 
 body {
-  @apply my-[48px] mx-auto w-5/6 sm:mx-[0px];
+  @apply my-[48px] mx-auto w-5/6  ;
 }
 
 .avatar-img {
@@ -64,7 +64,7 @@ body {
 }
 
 .img-container {
-  @apply max-w-[250px] max-h-[200px] min-w-[250px] min-h-[250px] hidden lg:flex;
+  @apply max-w-[250px] max-h-[200px] min-w-[250px] min-h-[250px] hidden xl:flex;
 
   img {
     @apply w-full h-full object-cover;
@@ -89,7 +89,7 @@ body {
 }
 
 .row {
-  @apply flex gap-[32px];
+  @apply flex flex-wrap gap-[32px];
 
   & > * {
     @apply flex-1;
