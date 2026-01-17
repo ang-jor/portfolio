@@ -17,16 +17,20 @@ function App() {
           <Container
             hasImage
             content={
-              <img src="../public/avatar.png" alt="me" className="avatar-img" />
+              <img src="../src/assets/me.jpg" alt="me" className="avatar-img" />
             }
           />
-          <Container bgColor="#CAE7B9" content={introContent} className="intro-container"/>
+          <Container
+            bgColor="#CAE7B9"
+            content={introContent}
+            className="intro-container"
+          />
         </div>
         <Container
           hasTitle
           title="about me"
           bgColor="#F3DE8A"
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida est non odio blandit, ut consequat metus interdum. Mauris sodales, velit vitae ornare condimentum, metus lacus interdum ligula, sed dapibus risus dolor sit amet purus. Quisque volutpat eros eget metus aliquam mattis. Phasellus bibendum lobortis nunc, vitae luctus lorem finibus eu. "
+          content="A UX engineer with over four years of experience in designing and developing user-centric digital experiences. Passionate about creating intuitive interfaces and seamless user journeys that drive engagement and satisfaction. Skilled in user research, wireframing, prototyping, and front-end development. Committed to staying updated with the latest industry trends and best practices to deliver innovative solutions that meet user needs and business goals."
         />
         <Container
           hasTitle

@@ -2,19 +2,10 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-html {
-  font-size: 16px;
-  @screen md {
-    font-size: 17px;
-  }
-  @screen lg {
-    font-size: 26px;
-  }
-}
-
 /*VARIABLES*/
 :root {
   /*COLORS*/
+  --body-bg-color: white;
 
   /*TYPO*/
   --font-family: "Figtree";
@@ -28,6 +19,18 @@ html {
 
   /*NUMBERS*/
   --container-radius: 30px;
+}
+
+html {
+  background-color: var(--body-bg-color);
+
+  font-size: 16px;
+  @screen md {
+    font-size: 17px;
+  }
+  @screen lg {
+    font-size: 26px;
+  }
 }
 
 * {
@@ -111,7 +114,7 @@ body {
     @apply flex gap-[16px] justify-between;
 
     .project-item-content {
-      @apply flex gap-[16px];
+      @apply flex gap-[16px] w-full justify-between;
 
       .project-item-details {
         @apply flex flex-col;
@@ -130,14 +133,113 @@ body {
       .project-item-tags {
         @apply flex gap-[8px] mt-[8px];
       }
+
+      a.link {
+        @apply text-black flex items-center justify-center;
+        position: relative;
+        padding: 8px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 40px;
+          height: 40px;
+          background-color: rgba(0, 0, 0, 0.05);
+          border-radius: 50%;
+          inset: 0;
+          margin: auto;
+          transition: background-color 0.3s ease-in-out;
+        }
+
+        svg {
+          position: relative;
+          z-index: 1;
+        }
+
+        &:hover::before {
+          background-color: rgba(0, 0, 0, 0.15);
+        }
+      }
+
+      .project-item-actions {
+        @apply flex gap-[16px];
+      }
+
+      button.link {
+        @apply text-black flex items-center justify-center border-none bg-none cursor-pointer;
+        position: relative;
+        padding: 8px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 40px;
+          height: 40px;
+          background-color: rgba(0, 0, 0, 0.05);
+          border-radius: 50%;
+          inset: 0;
+          margin: auto;
+          transition: background-color 0.3s ease-in-out;
+        }
+
+        svg {
+          position: relative;
+          z-index: 1;
+        }
+
+        &:hover::before {
+          background-color: rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
+  }
+}
+
+.modal-backdrop {
+  @apply fixed inset-0 bg-black opacity-50 z-40;
+}
+
+.modal-container {
+  @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 rounded-[30px] p-[32px] max-w-[600px] max-h-[80vh] overflow-y-auto;
+  animation: fadeIn 0.3s ease-in-out;
+
+  h2 {
+    @apply text-black mb-[24px];
+    font-size: var(--text-fluid-base);
+  }
+
+  p {
+    @apply text-black;
+    font-size: var(--text-fluid-sm);
+  }
+
+  .modal-images {
+    @apply flex flex-col gap-[16px] mb-[24px];
+
+    img {
+      @apply w-full h-auto rounded-[15px] object-cover;
+    }
+  }
+
+  .modal-close {
+    @apply absolute top-[16px] right-[16px] bg-none border-none cursor-pointer text-black flex items-center justify-center;
+    padding: 8px;
+
+    &:hover {
+      opacity: 0.7;
     }
 
-    .arrow {
-      @apply size-[32px] self-center hidden;
+    svg {
+      @apply w-6 h-6;
     }
+  }
+}
 
-    &:hover .arrow {
-      @apply flex;
-    }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
