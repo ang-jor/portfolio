@@ -23,6 +23,9 @@
 
 html {
   background-color: var(--body-bg-color);
+  height: 100vh;
+  scrollbar-gutter: stable;
+  scrollbar-width: none;
 
   font-size: 16px;
   @screen md {
@@ -39,11 +42,11 @@ html {
 }
 
 main {
-  @apply flex gap-[32px] flex-wrap;
+  @apply flex gap-[16px] flex-wrap p-[8px] md:p-[24px];
 }
 
 body {
-  @apply my-[48px] mx-auto w-5/6;
+  @apply mx-auto w-full h-full content-center lg:w-14/15 xl:w-5/6;
 }
 
 .avatar-img {
@@ -51,7 +54,7 @@ body {
 }
 
 .welcome-content {
-  @apply flex flex-col text-center justify-center text-black;
+  @apply flex flex-col text-center justify-center text-black p-[24px];
 
   h1 {
     font-size: var(--text-fluid-xl);
@@ -67,7 +70,7 @@ body {
 }
 
 .img-container {
-  @apply max-w-[250px] max-h-[200px] min-w-[250px] min-h-[250px] hidden xl:flex;
+  @apply max-w-[250px] max-h-[200px] min-w-[215px] min-h-[250px] hidden xl:flex;
 
   img {
     @apply w-full h-full object-cover;
@@ -75,11 +78,11 @@ body {
 }
 
 .intro-container {
-  @apply min-w-[250px];
+  @apply min-w-[300px];
 }
 
 .container-with-title {
-  @apply flex flex-col gap-[24px] p-[24px] w-full rounded-[30px] min-w-[300px] min-h-[250px];
+  @apply flex flex-col p-[24px] w-full rounded-[30px] min-w-[300px];
 
   p {
     @apply text-black;
@@ -92,7 +95,15 @@ body {
 }
 
 .row {
-  @apply flex flex-wrap gap-[32px];
+  @apply flex flex-wrap gap-[16px];
+
+  @screen sm {
+    @apply gap-[24px];
+  }
+
+  @screen md {
+    @apply gap-[32px];
+  }
 
   & > * {
     @apply flex-1;
@@ -100,7 +111,15 @@ body {
 }
 
 .col {
-  @apply flex flex-col flex-1 gap-[32px] flex-wrap;
+  @apply flex flex-col flex-1 gap-[16px] w-full;
+
+  @screen sm {
+    @apply gap-[24px];
+  }
+
+  @screen md {
+    @apply gap-[32px];
+  }
 
   & > * {
     @apply flex-1;
@@ -131,7 +150,7 @@ body {
       }
 
       .project-item-tags {
-        @apply flex gap-[8px] mt-[8px];
+        @apply flex flex-wrap gap-[8px] mt-[8px];
       }
 
       a.link {
