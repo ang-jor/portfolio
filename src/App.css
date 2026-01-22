@@ -6,6 +6,16 @@
 :root {
   /*COLORS*/
   --body-bg-color: white;
+  --text-color: black;
+  --color-intro: #cae7b9;
+  --color-about: #f3de8a;
+  --color-projects: #ada6b5;
+  --color-project-badge: #71677c;
+  --color-experience: #eb9486;
+  --color-contact: #a9c2cb;
+  --color-toggle-bg: #a19194;
+  --color-resume-button: #2b3139;
+  --color-resume-button-hover: #1f2329;
 
   /*TYPO*/
   --font-family: "Figtree";
@@ -19,6 +29,23 @@
 
   /*NUMBERS*/
   --container-radius: 30px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /*COLORS - DARK MODE*/
+    --body-bg-color: #1a1a1a;
+    --text-color: white;
+    --color-intro: #5a7d54;
+    --color-about: #8b7d3a;
+    --color-projects: #3d3946;
+    --color-project-badge: #6b6370;
+    --color-experience: #8b5a52;
+    --color-contact: #5a7a84;
+    --color-toggle-bg: #5c5455;
+    --color-resume-button: #46515f;
+    --color-resume-button-hover: #2b3139;
+  }
 }
 
 html {
@@ -54,7 +81,8 @@ body {
 }
 
 .welcome-content {
-  @apply flex flex-col text-center justify-center text-black p-[24px];
+  @apply flex flex-col text-center justify-center p-[24px];
+  color: var(--text-color);
 
   h1 {
     font-size: var(--text-fluid-xl);
@@ -65,7 +93,7 @@ body {
   @apply flex justify-center w-full mx-auto rounded-[30px] max-w-none;
 
   p {
-    @apply text-black;
+    color: var(--text-color);
   }
 }
 
@@ -83,13 +111,14 @@ body {
 
 .container-with-title {
   @apply flex flex-col p-[24px] w-full rounded-[30px] min-w-[300px];
+  color: var(--text-color);
 
   p {
-    @apply text-black;
+    color: var(--text-color);
   }
 
   h2 {
-    @apply text-black;
+    color: var(--text-color);
     font-size: var(--text-fluid-base);
   }
 }
@@ -140,21 +169,28 @@ body {
       }
 
       h3 {
-        @apply text-black;
+        color: var(--text-color);
         font-size: var(--text-fluid-base);
       }
 
       p {
-        @apply text-black;
+        color: var(--text-color);
         font-size: var(--text-fluid-sm);
       }
 
       .project-item-tags {
         @apply flex flex-wrap gap-[8px] mt-[8px];
+
+        .badge {
+          background-color: var(--color-project-badge);
+          color: white;
+          border: none;
+        }
       }
 
       a.link {
-        @apply text-black flex items-center justify-center  no-underline;
+        color: var(--text-color);
+        @apply flex items-center justify-center  no-underline;
         position: relative;
         padding: 8px;
 
@@ -185,7 +221,8 @@ body {
       }
 
       button.link {
-        @apply text-black flex items-center justify-center border-none bg-none cursor-pointer no-underline;
+        color: var(--text-color);
+        @apply flex items-center justify-center border-none bg-none cursor-pointer no-underline;
         position: relative;
         padding: 8px;
 
@@ -220,12 +257,13 @@ body {
 }
 
 h2 {
-  @apply text-black mb-[24px];
+  color: var(--text-color);
+  @apply mb-[24px];
   font-size: var(--text-fluid-base);
 }
 
 p {
-  @apply text-black;
+  color: var(--text-color);
   font-size: var(--text-fluid-sm);
 }
 
@@ -238,7 +276,8 @@ p {
 }
 
 .modal-close {
-  @apply absolute top-[16px] right-[16px] bg-none border-none cursor-pointer text-black flex items-center justify-center;
+  @apply absolute top-[16px] right-[16px] bg-none border-none cursor-pointer flex items-center justify-center;
+  color: var(--text-color);
   padding: 8px;
 
   &:hover {
@@ -254,12 +293,13 @@ p {
   @apply flex gap-[16px] h-[32px];
 
   a {
-    @apply text-black flex items-center justify-center;
+    color: var(--text-color);
+    @apply flex items-center justify-center;
     position: relative;
     padding: 8px;
 
     i {
-      color: rgba(0, 0, 0, 0.8);
+      color: var(--text-color);
     }
 
     &::before {
@@ -277,6 +317,23 @@ p {
     &:hover::before {
       background-color: rgba(0, 0, 0, 0.15);
     }
+  }
+}
+
+.toggle-container {
+  @apply content-center rounded-[20px];
+
+  input {
+    @apply m-auto;
+  }
+}
+
+.resume-btn {
+  background-color: var(--color-resume-button);
+  @apply text-white rounded-[20px] min-h-[64px] shadow-none;
+
+  &:hover {
+    background-color: var(--color-resume-button-hover);
   }
 }
 

@@ -31,7 +31,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
             <p>{description}</p>
             <div className="project-item-tags">
               {tags.map((tag) => (
-                <div key={tag} className="badge">
+                <div key={tag} className="badge badge-ghost">
                   {tag}
                 </div>
               ))}

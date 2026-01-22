@@ -22,7 +22,7 @@ function App() {
             }
           />
           <Container
-            bgColor="#CAE7B9"
+            bgColor="var(--color-intro)"
             content={introContent}
             className="intro-container"
           />
@@ -30,13 +30,13 @@ function App() {
         <Container
           hasTitle
           title="about me"
-          bgColor="#F3DE8A"
+          bgColor="var(--color-about)"
           content="A UX engineer with over four years of experience in designing and developing user-centric digital experiences. Passionate about creating intuitive interfaces and seamless user journeys that drive engagement and satisfaction. Skilled in user research, wireframing, prototyping, and front-end development. Committed to staying updated with the latest industry trends and best practices to deliver innovative solutions that meet user needs and business goals."
         />
         <Container
           hasTitle
           title="experience"
-          bgColor="#EB9486"
+          bgColor="var(--color-experience)"
           content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida est non odio blandit, ut consequat metus interdum. Mauris sodales, velit vitae ornare condimentum, metus lacus interdum ligula, sed dapibus risus dolor sit amet purus. Quisque volutpat eros eget metus aliquam mattis. Phasellus bibendum lobortis nunc, vitae luctus lorem finibus eu. "
         />
       </div>
@@ -44,7 +44,7 @@ function App() {
         <Container
           hasTitle
           title="projects"
-          bgColor="#F3DE8A"
+          bgColor="var(--color-projects)"
           content={<ProjectList />}
           className="top-row"
         />
@@ -52,13 +52,17 @@ function App() {
           <Container
             hasTitle
             title="get in touch"
-            bgColor="#a9c2cb"
+            bgColor="var(--color-contact)"
             content={<ContactLinks />}
           />
           <div className="col">
-            <button className="btn btn-soft">Resume</button>
+            <button className="btn btn-soft resume-btn">
+              Resume
+              <i className="fa-solid fa-download fa-lg"></i>
+            </button>
             <Container
-              bgColor="GREY"
+              className="toggle-container"
+              bgColor="var(--color-toggle-bg)"
               content={
                 <input
                   type="checkbox"
