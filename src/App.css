@@ -62,7 +62,7 @@ body {
 }
 
 .container {
-  @apply flex justify-center w-full mx-auto rounded-[30px] min-h-[250px] max-w-none;
+  @apply flex justify-center w-full mx-auto rounded-[30px] max-w-none;
 
   p {
     @apply text-black;
@@ -154,7 +154,7 @@ body {
       }
 
       a.link {
-        @apply text-black flex items-center justify-center;
+        @apply text-black flex items-center justify-center  no-underline;
         position: relative;
         padding: 8px;
 
@@ -185,7 +185,7 @@ body {
       }
 
       button.link {
-        @apply text-black flex items-center justify-center border-none bg-none cursor-pointer;
+        @apply text-black flex items-center justify-center border-none bg-none cursor-pointer no-underline;
         position: relative;
         padding: 8px;
 
@@ -199,11 +199,6 @@ body {
           inset: 0;
           margin: auto;
           transition: background-color 0.3s ease-in-out;
-        }
-
-        svg {
-          position: relative;
-          z-index: 1;
         }
 
         &:hover::before {
@@ -252,6 +247,36 @@ p {
 
   svg {
     @apply w-6 h-6;
+  }
+}
+
+.contact-links {
+  @apply flex gap-[16px] h-[32px];
+
+  a {
+    @apply text-black flex items-center justify-center;
+    position: relative;
+    padding: 8px;
+
+    i {
+      color: rgba(0, 0, 0, 0.8);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.05);
+      border-radius: 50%;
+      inset: 0;
+      margin: auto;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &:hover::before {
+      background-color: rgba(0, 0, 0, 0.15);
+    }
   }
 }
 

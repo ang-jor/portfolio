@@ -1,6 +1,7 @@
 import "./App.css";
 import Container from "./components/Container.tsx";
 import ProjectList from "./components/ProjectList.tsx";
+import ContactLinks from "./components/ContactLinks.tsx";
 
 const introContent = (
   <div className="welcome-content">
@@ -45,20 +46,28 @@ function App() {
           title="projects"
           bgColor="#F3DE8A"
           content={<ProjectList />}
+          className="top-row"
         />
-        <div className="row">
+        <div className="row bottom-row">
           <Container
             hasTitle
             title="get in touch"
-            bgColor="GREY"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida est non odio blandit, ut consequat metus interdum. Mauris sodales, velit vitae ornare condimentum, metus lacus interdum ligula, sed dapibus risus dolor sit amet purus. Quisque volutpat eros eget metus aliquam mattis. Phasellus bibendum lobortis nunc, vitae luctus lorem finibus eu. "
+            bgColor="#a9c2cb"
+            content={<ContactLinks />}
           />
-          <Container
-            hasTitle
-            title="random"
-            bgColor="GREY"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida est non odio blandit, ut consequat metus interdum. Mauris sodales, velit vitae ornare condimentum, metus lacus interdum ligula, sed dapibus risus dolor sit amet purus. Quisque volutpat eros eget metus aliquam mattis. Phasellus bibendum lobortis nunc, vitae luctus lorem finibus eu. "
-          />
+          <div className="col">
+            <button className="btn btn-soft">Resume</button>
+            <Container
+              bgColor="GREY"
+              content={
+                <input
+                  type="checkbox"
+                  defaultChecked
+                  className="toggle toggle-lg"
+                />
+              }
+            />
+          </div>
         </div>
       </div>
     </main>

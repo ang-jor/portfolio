@@ -26,6 +26,14 @@ const ProjectList: React.FC = () => {
         modalImages={["image1.jpg", "image2.jpg"]}
         modalBgColor="#F3DE8A"
       />
+      <ProjectItem
+        title="Lorem ipsum"
+        description="That's the site you are currently viewing. Designed in Figma, built with React TSX and styled with Tailwind CSS and DaisyUI."
+        tags={["JavaScript", "API"]}
+        modalDescription="Long detailed description about the project..."
+        modalImages={["image1.jpg", "image2.jpg"]}
+        modalBgColor="#F3DE8A"
+      />
     </div>
   );
 };
