@@ -47,7 +47,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
                 }}
                 aria-label="View project details"
               >
-                <i className="fa-solid fa-eye fa-lg"></i>
+                <i className="fa-solid fa-expand fa-lg"></i>
               </button>
             )}
             {externalLink && (
@@ -58,7 +58,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
                 rel="noopener noreferrer"
                 aria-label="Visit external link"
               >
-                <i className="fa-solid fa-link fa-lg"></i>
+                <i className="fa-solid fa-arrow-up-right-from-square fa-lg"></i>
               </a>
             )}
           </div>

@@ -328,6 +328,19 @@ p {
   }
 }
 
+.toggle-content {
+  @apply flex flex-col items-center gap-[16px];
+}
+
+.shuffle-btn {
+  background-color: var(--color-resume-button);
+  @apply text-white rounded-[20px] min-h-[48px] min-w-[48px] p-0 shadow-none flex items-center justify-center;
+
+  &:hover {
+    background-color: var(--color-resume-button-hover);
+  }
+}
+
 .resume-btn {
   background-color: var(--color-resume-button);
   @apply text-white rounded-[20px] min-h-[64px] shadow-none;
