@@ -21,11 +21,11 @@
   --font-family: "Figtree";
 
   /*FLUID TEXT SIZES*/
-  --text-fluid-sm: clamp(0.875rem, 1vw, 1rem);
-  --text-fluid-base: clamp(1rem, 1.25vw, 1.25rem);
-  --text-fluid-lg: clamp(1.125rem, 1.5vw, 1.5rem);
-  --text-fluid-xl: clamp(1.5rem, 2vw, 2rem);
-  --text-fluid-2xl: clamp(2rem, 3vw, 3rem);
+  --text-fluid-sm: clamp(1.125rem, 1vw, 1.25rem);
+  --text-fluid-base: clamp(1.25rem, 1.25vw, 1.5rem);
+  --text-fluid-lg: clamp(1.375rem, 1.5vw, 1.75rem);
+  --text-fluid-xl: clamp(1.75rem, 2vw, 2.25rem);
+  --text-fluid-2xl: clamp(2.25rem, 3vw, 3.25rem);
 
   /*NUMBERS*/
   --container-radius: 30px;
@@ -73,7 +73,7 @@ main {
 }
 
 body {
-  @apply mx-auto w-full h-full content-center lg:w-14/15 xl:w-5/6;
+  @apply mx-auto w-full h-full content-center lg:w-14/15 xl:w-5/7;
 }
 
 .avatar-img {
@@ -98,7 +98,7 @@ body {
 }
 
 .img-container {
-  @apply max-w-[250px] max-h-[200px] min-w-[215px] min-h-[250px] hidden xl:flex;
+  @apply max-w-[250px] max-h-[200px] min-w-[100px] min-h-[100px] hidden xl:flex;
 
   img {
     @apply w-full h-full object-cover;
@@ -329,7 +329,7 @@ p {
 }
 
 .toggle-content {
-  @apply flex flex-col items-center gap-[16px];
+  @apply flex items-center gap-[16px];
 }
 
 .shuffle-btn {

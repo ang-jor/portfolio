@@ -1,0 +1,67 @@
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  color: var(--text-color);
+}
+
+.timeline-item {
+  display: flex;
+  gap: 16px;
+  position: relative;
+}
+
+.timeline-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 40px;
+  width: 2px;
+  height: calc(100% + 8px);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .timeline-item:not(:last-child)::after {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.timeline-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  flex-shrink: 0;
+  margin-top: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-content {
+  flex: 1;
+  padding-top: 2px;
+}
+
+.timeline-company {
+  margin: 0;
+  font-size: var(--text-fluid-base);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.timeline-role {
+  margin: 0;
+  font-size: var(--text-fluid-sm);
+  font-weight: 500;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.timeline-description {
+  margin: 0;
+  font-size: var(--text-fluid-sm);
+  line-height: 1.5;
+  opacity: 0.85;
+}

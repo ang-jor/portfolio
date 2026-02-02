@@ -62,22 +62,7 @@ function App() {
           hasTitle
           title="about me"
           bgColor={colors[1]}
-          content="A UX engineer with over four years of experience in designing and developing user-centric digital experiences. Passionate about creating intuitive interfaces and seamless user journeys that drive engagement and satisfaction. Skilled in user research, wireframing, prototyping, and front-end development. Committed to staying updated with the latest industry trends and best practices to deliver innovative solutions that meet user needs and business goals."
-        />
-        <Container
-          hasTitle
-          title="experience"
-          bgColor={colors[2]}
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida est non odio blandit, ut consequat metus interdum. Mauris sodales, velit vitae ornare condimentum, metus lacus interdum ligula, sed dapibus risus dolor sit amet purus. Quisque volutpat eros eget metus aliquam mattis. Phasellus bibendum lobortis nunc, vitae luctus lorem finibus eu. "
-        />
-      </div>
-      <div className="col">
-        <Container
-          hasTitle
-          title="projects"
-          bgColor={colors[3]}
-          content={<ProjectList bgColor={colors[3]} />}
-          className="top-row"
+          content="I'm a UX engineer with over four years of experience in designing and building digital experiences. Throughout my career, I've worked mostly as a UX generalist, but I find the most purpose working at the intersection of design and front-end development. These days I'm leaning more towards building accessible, responsive, and performant web applications."
         />
         <div className="row bottom-row">
           <Container
@@ -113,6 +98,15 @@ function App() {
             />
           </div>
         </div>
+      </div>
+      <div className="col">
+        <Container
+          hasTitle
+          title="what i've worked on"
+          bgColor={colors[3]}
+          content={<ProjectList bgColor={colors[3]} />}
+          className="top-row"
+        />
       </div>
     </main>
   );
