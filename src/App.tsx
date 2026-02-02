@@ -7,7 +7,7 @@ import ContactLinks from "./components/ContactLinks.tsx";
 const introContent = (
   <div className="welcome-content">
     <h1>hi, i'm angela</h1>
-    <span>ux engineer @ skopje, macedonia</span>
+    <span className="text-lg">ux engineer @ skopje, macedonia</span>
   </div>
 );
 
@@ -76,7 +76,7 @@ function App() {
           hasTitle
           title="projects"
           bgColor={colors[3]}
-          content={<ProjectList />}
+          content={<ProjectList bgColor={colors[3]} />}
           className="top-row"
         />
         <div className="row bottom-row">

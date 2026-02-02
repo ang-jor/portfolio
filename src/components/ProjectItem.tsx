@@ -64,7 +64,6 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
           </div>
         </div>
       </div>
-
       <ProjectModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

@@ -6,7 +6,7 @@
 :root {
   /*COLORS*/
   --body-bg-color: white;
-  --text-color: black;
+  --text-color: rgba(0, 0, 0, 0.85);
   --color-intro: #cae7b9;
   --color-about: #f3de8a;
   --color-projects: #ada6b5;
@@ -35,7 +35,7 @@
   :root {
     /*COLORS - DARK MODE*/
     --body-bg-color: #1a1a1a;
-    --text-color: white;
+    --text-color: #fdfdfd;
     --color-intro: #5a7d54;
     --color-about: #8b7d3a;
     --color-projects: #3d3946;
@@ -182,7 +182,7 @@ body {
         @apply flex flex-wrap gap-[8px] mt-[8px];
 
         .badge {
-          background-color: var(--color-project-badge);
+          background-color: rgba(0, 0, 0, 0.5);
           color: white;
           border: none;
         }
