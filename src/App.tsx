@@ -3,6 +3,7 @@ import { useState } from "react";
 import Container from "./components/Container.tsx";
 import ProjectList from "./components/ProjectList.tsx";
 import ContactLinks from "./components/ContactLinks.tsx";
+import { ProjectModal } from "./components/ProjectModal.tsx";
 
 const introContent = (
   <div className="welcome-content">
@@ -29,6 +30,14 @@ const shuffleArray = (array: string[]) => {
   return shuffled;
 };
 
+interface ModalState {
+  isOpen: boolean;
+  title: string;
+  description: string;
+  images?: string[];
+  bgColor?: string;
+}
+
 function App() {
   const [colors, setColors] = useState([
     "var(--color-intro)",
@@ -38,8 +47,33 @@ function App() {
     "var(--color-contact)",
   ]);
 
+  const [modalState, setModalState] = useState<ModalState>({
+    isOpen: false,
+    title: "",
+    description: "",
+  });
+
   const handleShuffleColors = () => {
     setColors(shuffleArray(colorOptions).slice(0, 5));
+  };
+
+  const openModal = (
+    title: string,
+    description: string,
+    images?: string[],
+    bgColor?: string,
+  ) => {
+    setModalState({
+      isOpen: true,
+      title,
+      description,
+      images,
+      bgColor,
+    });
+  };
+
+  const closeModal = () => {
+    setModalState({ ...modalState, isOpen: false });
   };
 
   return (
@@ -104,10 +138,19 @@ function App() {
           hasTitle
           title="what i've worked on"
           bgColor={colors[3]}
-          content={<ProjectList bgColor={colors[3]} />}
+          content={<ProjectList bgColor={colors[3]} onOpenModal={openModal} />}
           className="top-row"
         />
       </div>
+
+      <ProjectModal
+        isOpen={modalState.isOpen}
+        onClose={closeModal}
+        title={modalState.title}
+        description={modalState.description}
+        images={modalState.images}
+        bgColor={modalState.bgColor}
+      />
     </main>
   );
 }

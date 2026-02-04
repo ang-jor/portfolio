@@ -69,7 +69,7 @@ html {
 }
 
 main {
-  @apply flex gap-[16px] flex-wrap p-[8px] md:p-[24px];
+  @apply flex gap-[16px] flex-wrap p-[8px] md:p-[24px] relative;
 }
 
 body {
@@ -251,8 +251,9 @@ body {
 }
 
 .modal-container {
-  @apply fixed inset-0 z-50 rounded-[30px] p-[32px] overflow-y-auto lg:w-14/15 xl:w-5/6 m-[8px] md:m-[24px];
-  margin: auto;
+  @apply absolute top-1/2 left-1/2 z-50 rounded-[30px] p-[32px] overflow-y-auto;
+  @apply w-full h-full;
+  transform: translate(-50%, -50%);
   animation: fadeIn 0.3s ease-in-out;
 }
 
