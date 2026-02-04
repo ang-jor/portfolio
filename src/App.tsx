@@ -35,6 +35,7 @@ interface ModalState {
   title: string;
   description: string;
   images?: string[];
+  tags?: string[];
   bgColor?: string;
 }
 
@@ -51,6 +52,7 @@ function App() {
     isOpen: false,
     title: "",
     description: "",
+    tags: [],
   });
 
   const handleShuffleColors = () => {
@@ -62,6 +64,7 @@ function App() {
     description: string,
     images?: string[],
     bgColor?: string,
+    tags?: string[],
   ) => {
     setModalState({
       isOpen: true,
@@ -69,6 +72,7 @@ function App() {
       description,
       images,
       bgColor,
+      tags,
     });
   };
 
@@ -150,6 +154,7 @@ function App() {
         description={modalState.description}
         images={modalState.images}
         bgColor={modalState.bgColor}
+        tags={modalState.tags}
       />
     </main>
   );

@@ -6,6 +6,7 @@ export interface ProjectModalProps {
   title: string;
   description: string;
   images?: string[];
+  tags?: string[];
   bgColor?: string;
 }
 
@@ -15,16 +16,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   title,
   description,
   images = [],
+  tags = [],
   bgColor = "#F3DE8A",
 }) => {
   if (!isOpen) return null;
 
   return (
     <>
-      {/* Backdrop */}
       <div className="modal-backdrop" onClick={onClose} />
-
-      {/* Modal */}
       <div className="modal-container" style={{ backgroundColor: bgColor }}>
         <button
           className="modal-close"
@@ -46,9 +45,16 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             />
           </svg>
         </button>
-
         <h2>{title}</h2>
-
+        <div className="modal-tags">
+          {tags.map((tag) => (
+            <div key={tag} className="badge badge-ghost">
+              {tag}
+            </div>
+          ))}
+        </div>
+        <div className="divider" />
+        <p>{description}</p>
         {images.length > 0 && (
           <div className="modal-images">
             {images.map((image, index) => (
@@ -56,8 +62,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             ))}
           </div>
         )}
-
-        <p>{description}</p>
       </div>
     </>
   );

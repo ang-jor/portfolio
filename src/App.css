@@ -255,6 +255,16 @@ body {
   @apply w-full h-full;
   transform: translate(-50%, -50%);
   animation: fadeIn 0.3s ease-in-out;
+
+  .modal-tags {
+    @apply flex flex-wrap gap-[8px] mt-[8px] mb-[24px];
+
+    .badge {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+    }
+  }
 }
 
 h2 {

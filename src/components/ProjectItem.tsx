@@ -13,6 +13,7 @@ export interface ProjectItemProps {
     description: string,
     images?: string[],
     bgColor?: string,
+    tags?: string[],
   ) => void;
 }
 
@@ -51,6 +52,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
                   modalDescription,
                   modalImages,
                   modalBgColor,
+                  tags,
                 );
               }}
               aria-label="View project details"
