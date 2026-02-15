@@ -7,12 +7,10 @@ export interface ProjectItemProps {
   externalLink?: string;
   modalDescription?: string;
   modalImages?: string[];
-  modalBgColor?: string;
   onOpenModal?: (
     title: string,
     description: string,
     images?: string[],
-    bgColor?: string,
     tags?: string[],
   ) => void;
 }
@@ -24,7 +22,6 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   externalLink,
   modalDescription,
   modalImages,
-  modalBgColor,
   onOpenModal,
 }) => {
   return (
@@ -47,13 +44,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
               className="link"
               onClick={(e) => {
                 e.stopPropagation();
-                onOpenModal?.(
-                  title,
-                  modalDescription,
-                  modalImages,
-                  modalBgColor,
-                  tags,
-                );
+                onOpenModal?.(title, modalDescription, modalImages, tags);
               }}
               aria-label="View project details"
             >

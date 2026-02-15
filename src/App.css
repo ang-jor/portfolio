@@ -7,6 +7,7 @@
   /*COLORS*/
   --body-bg-color: white;
   --text-color: rgba(0, 0, 0, 0.85);
+  --modal-bg-color: #f4f4f4;
   --color-intro: #cae7b9;
   --color-about: #f3de8a;
   --color-projects: #ada6b5;
@@ -35,6 +36,7 @@ html.dark-mode {
   /*COLORS - DARK MODE*/
   --body-bg-color: #1a1a1a;
   --text-color: #fdfdfd;
+  --modal-bg-color: #2f2f2f;
   --color-intro: #5a7d54;
   --color-about: #8b7d3a;
   --color-projects: #3d3946;
@@ -255,6 +257,7 @@ body {
   @apply w-full h-full;
   transform: translate(-50%, -50%);
   animation: fadeIn 0.3s ease-in-out;
+  background-color: var(--modal-bg-color);
 
   .modal-tags {
     @apply flex flex-wrap gap-[8px] mt-[8px] mb-[24px];

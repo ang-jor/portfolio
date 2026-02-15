@@ -36,7 +36,6 @@ interface ModalState {
   description: string;
   images?: string[];
   tags?: string[];
-  bgColor?: string;
 }
 
 function App() {
@@ -77,7 +76,6 @@ function App() {
     title: string,
     description: string,
     images?: string[],
-    bgColor?: string,
     tags?: string[],
   ) => {
     setModalState({
@@ -85,7 +83,6 @@ function App() {
       title,
       description,
       images,
-      bgColor,
       tags,
     });
   };
@@ -173,7 +170,6 @@ function App() {
         title={modalState.title}
         description={modalState.description}
         images={modalState.images}
-        bgColor={modalState.bgColor}
         tags={modalState.tags}
       />
     </main>

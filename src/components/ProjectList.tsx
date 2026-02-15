@@ -8,7 +8,6 @@ export interface ProjectListProps {
     title: string,
     description: string,
     images?: string[],
-    bgColor?: string,
     tags?: string[],
   ) => void;
 }
@@ -22,7 +21,6 @@ const ProjectList: React.FC<ProjectListProps> = ({ bgColor, onOpenModal }) => {
           title={project.title}
           description={project.info}
           tags={project.tags}
-          modalBgColor={bgColor}
           onOpenModal={onOpenModal}
           modalDescription={project.description}
           modalImages={project.images}

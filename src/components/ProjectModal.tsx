@@ -7,7 +7,6 @@ export interface ProjectModalProps {
   description: string;
   images?: string[];
   tags?: string[];
-  bgColor?: string;
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({
@@ -17,14 +16,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   description,
   images = [],
   tags = [],
-  bgColor = "#F3DE8A",
 }) => {
   if (!isOpen) return null;
 
   return (
     <>
       <div className="modal-backdrop" onClick={onClose} />
-      <div className="modal-container" style={{ backgroundColor: bgColor }}>
+      <div className="modal-container">
         <button
           className="modal-close"
           onClick={onClose}
