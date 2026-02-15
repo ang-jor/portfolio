@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Container from "./components/Container.tsx";
 import ProjectList from "./components/ProjectList.tsx";
 import ContactLinks from "./components/ContactLinks.tsx";
@@ -48,6 +48,8 @@ function App() {
     "var(--color-contact)",
   ]);
 
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   const [modalState, setModalState] = useState<ModalState>({
     isOpen: false,
     title: "",
@@ -55,8 +57,20 @@ function App() {
     tags: [],
   });
 
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark-mode");
+    } else {
+      document.documentElement.classList.remove("dark-mode");
+    }
+  }, [isDarkMode]);
+
   const handleShuffleColors = () => {
     setColors(shuffleArray(colorOptions).slice(0, 5));
+  };
+
+  const handleToggleDarkMode = (checked: boolean) => {
+    setIsDarkMode(checked);
   };
 
   const openModal = (
@@ -119,11 +133,17 @@ function App() {
               bgColor="var(--color-toggle-bg)"
               content={
                 <div className="toggle-content">
-                  <input
-                    type="checkbox"
-                    defaultChecked
-                    className="toggle toggle-lg"
-                  />
+                  <label className="toggle toggle-xl text-base-content">
+                    <input
+                      type="checkbox"
+                      checked={isDarkMode}
+                      onChange={(e) => handleToggleDarkMode(e.target.checked)}
+                      // className="toggle toggle-xl"
+                      title="Toggle dark/light mode"
+                    />
+                    <i className="fa-solid fa-sun text-yellow-500" />
+                    <i className="fa-solid fa-moon" />
+                  </label>
                   <button
                     onClick={handleShuffleColors}
                     className="btn btn-soft shuffle-btn"
@@ -146,7 +166,6 @@ function App() {
           className="top-row"
         />
       </div>
-
       <ProjectModal
         isOpen={modalState.isOpen}
         onClose={closeModal}

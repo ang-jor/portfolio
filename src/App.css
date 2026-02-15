@@ -31,21 +31,19 @@
   --container-radius: 30px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /*COLORS - DARK MODE*/
-    --body-bg-color: #1a1a1a;
-    --text-color: #fdfdfd;
-    --color-intro: #5a7d54;
-    --color-about: #8b7d3a;
-    --color-projects: #3d3946;
-    --color-project-badge: #6b6370;
-    --color-experience: #8b5a52;
-    --color-contact: #5a7a84;
-    --color-toggle-bg: #5c5455;
-    --color-resume-button: #46515f;
-    --color-resume-button-hover: #2b3139;
-  }
+html.dark-mode {
+  /*COLORS - DARK MODE*/
+  --body-bg-color: #1a1a1a;
+  --text-color: #fdfdfd;
+  --color-intro: #5a7d54;
+  --color-about: #8b7d3a;
+  --color-projects: #3d3946;
+  --color-project-badge: #6b6370;
+  --color-experience: #8b5a52;
+  --color-contact: #5a7a84;
+  --color-toggle-bg: #5c5455;
+  --color-resume-button: #46515f;
+  --color-resume-button-hover: #2b3139;
 }
 
 html {
@@ -65,7 +63,6 @@ html {
 
 * {
   font-family: var(--font-family), sans-serif;
-  transition: all 0.3s ease-in-out;
 }
 
 main {
@@ -91,6 +88,7 @@ body {
 
 .container {
   @apply flex justify-center w-full mx-auto rounded-[30px] max-w-none;
+  transition: background-color 0.3s ease-in-out;
 
   p {
     color: var(--text-color);
@@ -112,6 +110,7 @@ body {
 .container-with-title {
   @apply flex flex-col p-[24px] w-full rounded-[30px] min-w-[300px];
   color: var(--text-color);
+  transition: background-color 0.3s ease-in-out;
 
   p {
     color: var(--text-color);
@@ -119,7 +118,7 @@ body {
 
   h2 {
     color: var(--text-color);
-    font-size: var(--text-fluid-base);
+    font-size: var(--text-fluid-sm);
   }
 }
 
@@ -171,6 +170,7 @@ body {
       h3 {
         color: var(--text-color);
         font-size: var(--text-fluid-base);
+        font-weight: 600;
       }
 
       p {
@@ -282,7 +282,7 @@ p {
   @apply flex flex-col gap-[16px] mb-[24px];
 
   img {
-    @apply w-full h-auto rounded-[15px] object-cover;
+    @apply w-full h-auto mt-[48px];
   }
 }
 
