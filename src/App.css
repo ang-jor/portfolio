@@ -333,14 +333,39 @@ p {
 
 .toggle-container {
   @apply content-center rounded-[20px];
-
-  input {
-    @apply m-auto;
-  }
 }
 
 .toggle-content {
   @apply flex items-center gap-[16px];
+}
+
+.theme-toggle-btn {
+  background-color: var(--color-resume-button);
+  @apply text-white rounded-[20px] min-h-[48px] min-w-[48px] p-0 shadow-none flex items-center justify-center;
+
+  &:hover {
+    background-color: var(--color-resume-button-hover);
+  }
+
+  .theme-icon {
+    font-size: 1.15rem;
+    display: inline-block;
+  }
+
+  .icon-spin-in {
+    animation: iconSwap 0.4s ease-out;
+  }
+}
+
+@keyframes iconSwap {
+  0% {
+    opacity: 0;
+    transform: rotate(-120deg) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
 }
 
 .shuffle-btn {

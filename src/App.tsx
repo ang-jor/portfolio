@@ -69,8 +69,8 @@ function App() {
     setColors(shuffleArray(colorOptions).slice(0, 5));
   };
 
-  const handleToggleDarkMode = (checked: boolean) => {
-    setIsDarkMode(checked);
+  const handleToggleDarkMode = () => {
+    setIsDarkMode((prev) => !prev);
   };
 
   const openModal = (
@@ -133,17 +133,18 @@ function App() {
               bgColor="var(--color-toggle-bg)"
               content={
                 <div className="toggle-content">
-                  <label className="toggle toggle-xl text-base-content">
-                    <input
-                      type="checkbox"
-                      checked={isDarkMode}
-                      onChange={(e) => handleToggleDarkMode(e.target.checked)}
-                      // className="toggle toggle-xl"
-                      title="Toggle dark/light mode"
+                  <button
+                    onClick={handleToggleDarkMode}
+                    className="btn btn-soft theme-toggle-btn"
+                    title="Toggle dark/light mode"
+                  >
+                    <i
+                      className={`fa-solid ${
+                        isDarkMode ? "fa-moon" : "fa-sun"
+                      } theme-icon ${isDarkMode ? "icon-spin-in" : "icon-spin-in"}`}
+                      key={isDarkMode ? "moon" : "sun"}
                     />
-                    <i className="fa-solid fa-sun text-yellow-500" />
-                    <i className="fa-solid fa-moon" />
-                  </label>
+                  </button>
                   <button
                     onClick={handleShuffleColors}
                     className="btn btn-soft shuffle-btn"
