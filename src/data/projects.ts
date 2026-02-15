@@ -35,4 +35,13 @@ export const projects: Project[] = [
     tags: ["Figma", "UI/UX Design"],
     images: ["/images/pockety/cover.png"],
   },
+  {
+    id: "course-catalog",
+    title: "Course Catalog",
+    info: "A course catalog application for educational institutions.",
+    description:
+      "Designed a course catalog application for internal education and training.",
+    tags: ["Figma", "UI/UX Design"],
+    images: ["assets/projects/course-cover.png"],
+  },
 ];
