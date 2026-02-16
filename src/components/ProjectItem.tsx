@@ -44,11 +44,12 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
           <h3>{title}</h3>
           <p>{info}</p>
           <div className="project-item-tags">
-            {tags.map((tag) => (
+            {tags.slice(0, 3).map((tag) => (
               <div key={tag} className="badge badge-ghost">
                 {tag}
               </div>
             ))}
+            {tags.length > 3 && <div className="badge badge-ghost">...</div>}
           </div>
         </div>
         <div className="project-item-actions">
