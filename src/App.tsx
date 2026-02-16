@@ -191,6 +191,7 @@ function App() {
         role={modalState.role}
         timeline={modalState.timeline}
         link={modalState.link}
+        bgColor={colors[3]}
       />
     </main>
   );

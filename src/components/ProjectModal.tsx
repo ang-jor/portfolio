@@ -12,6 +12,7 @@ export interface ProjectModalProps {
   role?: string;
   timeline?: string;
   link?: string;
+  bgColor?: string;
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({
@@ -26,13 +27,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   twoColumns = false,
   description = [],
   images = [],
+  bgColor,
 }) => {
   if (!isOpen) return null;
 
   return (
     <>
       <div className="modal-backdrop" onClick={onClose} />
-      <div className="modal-container">
+      <div className="modal-container" style={{ backgroundColor: bgColor }}>
         <button
           className="modal-close"
           onClick={onClose}
@@ -91,12 +93,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           </section>
         ))}
         {link && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="external-link"
-          >
+          <a href={link} target="_blank">
             {link.includes("behance.net")
               ? "See more visuals on Behance"
               : "View Project"}

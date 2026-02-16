@@ -288,7 +288,7 @@ body {
   }
 
   a {
-    @apply text-black m-auto flex items-center justify-center no-underline;
+    @apply text-[var(--text-color)] m-auto flex items-center justify-center no-underline;
   }
 }
 
