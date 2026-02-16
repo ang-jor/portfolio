@@ -259,6 +259,10 @@ body {
   animation: fadeIn 0.3s ease-in-out;
   background-color: var(--modal-bg-color);
 
+  h2 {
+    @apply mb-[8px];
+  }
+
   .modal-tags {
     @apply flex flex-wrap gap-[8px] mt-[8px] mb-[24px];
 
@@ -267,6 +271,24 @@ body {
       color: white;
       border: none;
     }
+  }
+
+  .info-row {
+    @apply flex items-center gap-[8px] mb-[8px];
+
+    span,
+    i {
+      color: var(--text-color);
+    }
+  }
+
+  .divider:before,
+  .divider:after {
+    @apply bg-[rgba(0,0,0,0.09)];
+  }
+
+  a {
+    @apply text-black m-auto flex items-center justify-center no-underline;
   }
 }
 
@@ -300,6 +322,26 @@ p {
 
   svg {
     @apply w-6 h-6;
+  }
+}
+
+section {
+  @apply flex gap-[60px] py-[48px] m-auto w-[82%];
+
+  p {
+    @apply content-center;
+  }
+
+  &.two-columns {
+    @apply flex-row;
+  }
+
+  &.single-column {
+    @apply flex-col;
+
+    img {
+      @apply mt-[16px];
+    }
   }
 }
 

@@ -2,26 +2,39 @@ import React from "react";
 
 export interface ProjectItemProps {
   title: string;
-  description: string;
+  info: string;
+  role?: string;
+  timeline?: string;
   tags: string[];
+  withAlert?: boolean;
+  twoColumns?: boolean;
   externalLink?: string;
-  modalDescription?: string;
-  modalImages?: string[];
+  description?: string[];
+  images?: string[];
   onOpenModal?: (
     title: string,
-    description: string,
+    description?: string[],
     images?: string[],
     tags?: string[],
+    withAlert?: boolean,
+    twoColumns?: boolean,
+    role?: string,
+    timeline?: string,
+    link?: string,
   ) => void;
 }
 
 export const ProjectItem: React.FC<ProjectItemProps> = ({
   title,
-  description,
+  info,
+  role,
+  timeline,
   tags,
+  withAlert,
+  twoColumns,
   externalLink,
-  modalDescription,
-  modalImages,
+  description,
+  images,
   onOpenModal,
 }) => {
   return (
@@ -29,7 +42,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
       <div className="project-item-content">
         <div className="project-item-details">
           <h3>{title}</h3>
-          <p>{description}</p>
+          <p>{info}</p>
           <div className="project-item-tags">
             {tags.map((tag) => (
               <div key={tag} className="badge badge-ghost">
@@ -39,12 +52,22 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
           </div>
         </div>
         <div className="project-item-actions">
-          {modalDescription && (
+          {description && (
             <button
               className="link"
               onClick={(e) => {
                 e.stopPropagation();
-                onOpenModal?.(title, modalDescription, modalImages, tags);
+                onOpenModal?.(
+                  title,
+                  description,
+                  images,
+                  tags,
+                  withAlert,
+                  twoColumns,
+                  role,
+                  timeline,
+                  externalLink,
+                );
               }}
               aria-label="View project details"
             >

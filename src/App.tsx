@@ -33,9 +33,14 @@ const shuffleArray = (array: string[]) => {
 interface ModalState {
   isOpen: boolean;
   title: string;
-  description: string;
+  description?: string[];
   images?: string[];
   tags?: string[];
+  withAlert?: boolean;
+  twoColumns?: boolean;
+  role?: string;
+  timeline?: string;
+  link?: string;
 }
 
 function App() {
@@ -52,7 +57,7 @@ function App() {
   const [modalState, setModalState] = useState<ModalState>({
     isOpen: false,
     title: "",
-    description: "",
+    description: [],
     tags: [],
   });
 
@@ -74,9 +79,14 @@ function App() {
 
   const openModal = (
     title: string,
-    description: string,
+    description?: string[],
     images?: string[],
     tags?: string[],
+    withAlert?: boolean,
+    twoColumns?: boolean,
+    role?: string,
+    timeline?: string,
+    link?: string,
   ) => {
     setModalState({
       isOpen: true,
@@ -84,6 +94,11 @@ function App() {
       description,
       images,
       tags,
+      withAlert,
+      twoColumns,
+      role,
+      timeline,
+      link,
     });
   };
 
@@ -171,6 +186,11 @@ function App() {
         description={modalState.description}
         images={modalState.images}
         tags={modalState.tags}
+        withAlert={modalState.withAlert}
+        twoColumns={modalState.twoColumns}
+        role={modalState.role}
+        timeline={modalState.timeline}
+        link={modalState.link}
       />
     </main>
   );

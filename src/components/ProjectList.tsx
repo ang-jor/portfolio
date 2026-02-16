@@ -6,25 +6,34 @@ export interface ProjectListProps {
   bgColor?: string;
   onOpenModal?: (
     title: string,
-    description: string,
+    description?: string[],
     images?: string[],
     tags?: string[],
+    withAlert?: boolean,
+    twoColumns?: boolean,
+    role?: string,
+    timeline?: string,
+    link?: string,
   ) => void;
 }
 
-const ProjectList: React.FC<ProjectListProps> = ({ bgColor, onOpenModal }) => {
+const ProjectList: React.FC<ProjectListProps> = ({ onOpenModal }) => {
   return (
     <div className="project-list">
       {projects.map((project) => (
         <ProjectItem
           key={project.id}
           title={project.title}
-          description={project.info}
+          info={project.info}
+          role={project.role}
+          timeline={project.timeline}
           tags={project.tags}
+          withAlert={project.withAlert}
           onOpenModal={onOpenModal}
-          modalDescription={project.description}
-          modalImages={project.images}
+          description={project.description}
+          images={project.images}
           externalLink={project.link}
+          twoColumns={project.twoColumns}
         />
       ))}
     </div>
