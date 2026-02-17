@@ -53,14 +53,7 @@ html {
   height: 100vh;
   scrollbar-gutter: stable;
   scrollbar-width: none;
-
   font-size: 16px;
-  @screen md {
-    font-size: 17px;
-  }
-  @screen lg {
-    font-size: 26px;
-  }
 }
 
 * {
@@ -127,14 +120,6 @@ body {
 .row {
   @apply flex flex-wrap gap-[16px];
 
-  @screen sm {
-    @apply gap-[24px];
-  }
-
-  @screen md {
-    @apply gap-[32px];
-  }
-
   & > * {
     @apply flex-1;
   }
@@ -143,13 +128,13 @@ body {
 .col {
   @apply flex flex-col flex-1 gap-[16px] w-full;
 
-  @screen sm {
+  /* @media (width >= 40rem) {
     @apply gap-[24px];
   }
 
-  @screen md {
+  @media (width >= 48rem) {
     @apply gap-[32px];
-  }
+  } */
 
   & > * {
     @apply flex-1;
@@ -253,9 +238,7 @@ body {
 }
 
 .modal-container {
-  @apply absolute top-1/2 left-1/2 z-50 rounded-[30px] p-[32px] overflow-y-auto;
-  @apply w-full h-full;
-  transform: translate(-50%, -50%);
+  @apply fixed inset-0 z-50 p-[32px] overflow-y-auto flex flex-col;
   animation: fadeIn 0.3s ease-in-out;
   background-color: var(--modal-bg-color);
 
@@ -287,8 +270,22 @@ body {
     @apply bg-[rgba(0,0,0,0.09)];
   }
 
+  .alert {
+    @apply mb-[24px] text-[var(--text-color)] border-[var(--text-color)];
+  }
+
+  .modal-body {
+    @apply flex flex-col justify-between;
+  }
+
   a {
-    @apply text-[var(--text-color)] m-auto flex items-center justify-center no-underline;
+    @apply text-[var(--text-color)] mt-auto mb-[16px] flex items-center justify-center no-underline;
+  }
+}
+
+@media (width >= 64rem) {
+  .modal-container {
+    @apply absolute top-1/2 left-1/2 inset-auto -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-[30px];
   }
 }
 
@@ -326,7 +323,7 @@ p {
 }
 
 section {
-  @apply flex gap-[60px] py-[48px] m-auto w-[82%];
+  @apply flex gap-[40px] m-auto w-[80%];
 
   p {
     @apply content-center;
@@ -334,6 +331,14 @@ section {
 
   &.two-columns {
     @apply flex-row;
+
+    @media (width <= 64rem) {
+      @apply flex-col;
+    }
+
+    &:last-of-type {
+      @apply flex-row-reverse;
+    }
   }
 
   &.single-column {
@@ -342,6 +347,10 @@ section {
     img {
       @apply mt-[16px];
     }
+  }
+
+  &:first-of-type {
+    @apply mt-[32px];
   }
 }
 
@@ -424,7 +433,7 @@ section {
 
 .resume-btn {
   background-color: var(--color-resume-button);
-  @apply text-white rounded-[20px] min-h-[64px] shadow-none;
+  @apply text-white rounded-[20px] min-h-[64px] shadow-none self-end w-fit;
 
   &:hover {
     background-color: var(--color-resume-button-hover);

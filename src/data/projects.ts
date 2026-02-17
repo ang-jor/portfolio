@@ -27,10 +27,8 @@ export const projects: Project[] = [
       "Metalmancy is a community-driven website with a bold, distinctive visual identity. The challenge was translating the client's vision into an experience that felt expressive without sacrificing clarity or usability. A strong emphasis was placed on animations and micro-interactions, and every visual decision was balanced against readability and intentional design.",
       "For this project, I had a hand throughout the whole process - from defining the visual direction to the implementation of the frontend. This was also my first hands-on experience with Vue, and the first time I understood what the hype about Tailwind was all about.",
     ],
-    images: [
-      "/images/metalmancy/cover.png",
-      "/images/metalmancy/animations.png",
-    ],
+    // images: ["/assets/projects/logo.svg"],
+    twoColumns: true,
   },
   {
     id: "tikvesh",
@@ -62,8 +60,8 @@ export const projects: Project[] = [
     ],
     withAlert: true,
     description: [
-      "This project is a mobile banking app designed for kids and young teens, with a parent interface counterpart that gives parents visibility into their children's spending habits. The app promotes financial literacy for younger users, while providing parents with insights, controls, and top-up features.",
-      "I began by conducting extensive user research and a detailed competitor analysis before moving on to defining the branding - typography, colors and tone of voice. Once the foundations were established, I iterated on the designs through multiple rounds of refinement, before arriving at a final solution that aligned with our overall vision.",
+      "This project is a mobile banking app designed for kids and young teens, with a parent interface counterpart that gives parents visibility into their children's spending habits. I began by conducting extensive user research and a detailed competitor analysis before moving on to defining the branding - typography, colors and tone of voice.",
+      "Once the foundations were established, I iterated on the designs through multiple rounds of refinement. We finally arrived at a final solution that aligned with our overall vision - an app that promotes financial literacy for younger users, while providing parents with insights, controls, and top-up features.",
     ],
     images: ["assets/projects/kids-cut.gif", "assets/projects/parents-cut.gif"],
     twoColumns: true,
@@ -82,6 +80,9 @@ export const projects: Project[] = [
       // add one more photo for this
       "Another key consideration throughout the project was scalability. Internal tools like this naturally evolve over time, so I focused on creating a flexible structure that could accommodate future feature requests and content expansion without disrupting the overall experience.",
     ],
-    images: ["assets/projects/course-cover.png"],
+    images: [
+      "assets/projects/course-cover.png",
+      "assets/projects/admin-requests.png",
+    ],
   },
 ];

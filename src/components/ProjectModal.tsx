@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export interface ProjectModalProps {
   isOpen: boolean;
@@ -29,6 +29,19 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   images = [],
   bgColor,
 }) => {
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
@@ -72,7 +85,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           ))}
         </div>
         {withAlert && (
-          <div role="alert" className="alert alert-info alert-soft">
+          <div role="alert" className="alert alert-info alert-dash">
             <span>
               This is a conceptual redesign of a real product I worked on
               professionally, but due to NDA restrictions, visuals and flows
@@ -88,7 +101,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           >
             <p>{text}</p>
             {images[index] && (
-              <img src={images[index]} alt={`${title} section ${index + 1}`} />
+              <img
+                src={images[index]}
+                alt={`${title} section ${index + 1}`}
+                className="mb-[48px]"
+              />
             )}
           </section>
         ))}

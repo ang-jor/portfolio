@@ -126,7 +126,22 @@ function App() {
           hasTitle
           title="about me"
           bgColor={colors[1]}
-          content="I'm a UX engineer with over four years of experience in designing and building digital experiences. Throughout my career, I've worked mostly as a UX generalist, but I find the most purpose working at the intersection of design and front-end development. These days I'm leaning more towards building accessible, responsive, and performant web applications."
+          content={
+            <div className="flex flex-col gap-[24px]">
+              <p>
+                I'm a UX engineer with over four years of experience in
+                designing and building digital experiences. Throughout my
+                career, I've worked mostly as a UX generalist, but I find the
+                most purpose working at the intersection of design and front-end
+                development. These days I'm leaning more towards building
+                accessible, responsive, and performant web applications.
+              </p>
+              <button className="btn btn-soft resume-btn">
+                Download CV
+                <i className="fa-solid fa-download fa-lg"></i>
+              </button>
+            </div>
+          }
         />
         <div className="row bottom-row">
           <Container
@@ -136,10 +151,6 @@ function App() {
             content={<ContactLinks />}
           />
           <div className="col">
-            <button className="btn btn-soft resume-btn">
-              Resume
-              <i className="fa-solid fa-download fa-lg"></i>
-            </button>
             <Container
               className="toggle-container"
               bgColor="var(--color-toggle-bg)"
