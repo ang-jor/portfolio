@@ -163,7 +163,16 @@ body {
 }
 
 .project-list {
-  @apply flex flex-col gap-[24px];
+  @apply flex flex-col;
+
+  .divider {
+    @apply my-[8px];
+
+    &:before,
+    &:after {
+      @apply bg-[rgba(0,0,0,0.09)];
+    }
+  }
 
   .project-item {
     @apply flex gap-[16px] justify-between;

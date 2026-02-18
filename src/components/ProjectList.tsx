@@ -20,21 +20,24 @@ export interface ProjectListProps {
 const ProjectList: React.FC<ProjectListProps> = ({ onOpenModal }) => {
   return (
     <div className="project-list">
-      {projects.map((project) => (
-        <ProjectItem
-          key={project.id}
-          title={project.title}
-          info={project.info}
-          role={project.role}
-          timeline={project.timeline}
-          tags={project.tags}
-          withAlert={project.withAlert}
-          onOpenModal={onOpenModal}
-          description={project.description}
-          images={project.images}
-          externalLink={project.link}
-          twoColumns={project.twoColumns}
-        />
+      {projects.map((project, idx) => (
+        <>
+          <ProjectItem
+            key={project.id}
+            title={project.title}
+            info={project.info}
+            role={project.role}
+            timeline={project.timeline}
+            tags={project.tags}
+            withAlert={project.withAlert}
+            onOpenModal={onOpenModal}
+            description={project.description}
+            images={project.images}
+            externalLink={project.link}
+            twoColumns={project.twoColumns}
+          />
+          {idx < projects.length - 1 && <div className="divider" />}
+        </>
       ))}
     </div>
   );
