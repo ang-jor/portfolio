@@ -2,8 +2,8 @@ import { Project } from "../types/project";
 
 export const projects: Project[] = [
   {
-    id: "ang-jor",
-    title: "ang-jor",
+    id: "portfolio",
+    title: "Portfolio",
     thumbnail: "/images/ang-jor/cover.png",
     info: "That's the site you are currently on.",
     role: "Designer & Developer",
@@ -18,7 +18,7 @@ export const projects: Project[] = [
   {
     id: "metalmancy",
     title: "Metalmancy",
-    info: "A website built for the Metalmancy community.",
+    info: "Website built for the Metalmancy community.",
     role: "Designer & Developer",
     timeline: "2024",
     tags: ["Figma", "UX/UI Design", "Vue", "TypeScript", "Frontend"],
@@ -33,7 +33,7 @@ export const projects: Project[] = [
   {
     id: "tikvesh",
     title: "Tikvesh",
-    info: "Design refresh for a winery events management app.",
+    info: "Winery events management mobile app.",
     role: "Designer",
     timeline: "2024",
     tags: ["Figma", "UI/UX Design", "Mobile Design"],
@@ -69,7 +69,7 @@ export const projects: Project[] = [
   {
     id: "course-catalog",
     title: "Course Catalog",
-    info: "A course catalog application for educational institutions.",
+    info: "Internal web app for employee development.",
     role: "Designer",
     timeline: "2024",
     tags: ["Figma", "UI/UX Design", "User Research", "Competitor Analysis"],

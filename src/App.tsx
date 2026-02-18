@@ -107,12 +107,15 @@ function App() {
                 <div className="flex flex-col gap-[24px] h-full justify-between">
                   <p>
                     I'm a UX engineer with over four years of experience in
-                    designing and building digital experiences. Throughout my
+                    designing and building digital solutions. Throughout my
                     career, I've worked mostly as a UX generalist, but I find
                     the most purpose working at the intersection of design and
-                    front-end development. These days I'm leaning more towards
-                    building accessible, responsive, and performant web
-                    applications.
+                    code.
+                  </p>
+                  <p>
+                    These days I'm leaning more towards front-end development,
+                    focusing on building accessible, responsive, and
+                    user-friendly interfaces.
                   </p>
                   <button className="btn btn-soft resume-btn">
                     Download CV

@@ -74,7 +74,7 @@ header {
 }
 
 main {
-  @apply flex gap-[16px] flex-wrap p-[8px] md:p-[24px] relative;
+  @apply flex gap-[16px] flex-wrap p-[8px] md:p-[24px] relative flex-col lg:flex-row;
 }
 
 body {
@@ -471,7 +471,7 @@ section {
 }
 
 footer {
-  @apply flex flex-col md:flex-row items-center justify-between gap-[16px] p-[8px] md:mx-[24px] mt-auto;
+  @apply flex flex-col md:flex-row items-center justify-between gap-[16px] p-[8px] md:mx-[24px] mt-auto text-center;
   color: var(--text-color);
 }
 
