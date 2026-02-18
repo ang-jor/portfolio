@@ -85,15 +85,6 @@ body {
   @apply flex-1 rounded-[30px];
 }
 
-.welcome-content {
-  @apply flex flex-col text-center justify-center p-[24px];
-  color: var(--text-color);
-
-  h1 {
-    font-size: var(--text-fluid-xl);
-  }
-}
-
 .container {
   @apply flex justify-center w-full mx-auto rounded-[30px] max-w-none;
   transition: background-color 0.3s ease-in-out;
@@ -113,6 +104,45 @@ body {
 
 .intro-container {
   @apply min-w-[300px];
+
+  .welcome-content {
+    @apply flex flex-col text-center justify-center p-[24px];
+    color: var(--text-color);
+
+    h1 {
+      font-size: var(--text-fluid-xl);
+
+      span {
+        position: relative;
+        display: inline-block;
+      }
+
+      .scribble-underline {
+        position: absolute;
+        left: -4%;
+        bottom: 0;
+        width: 110%;
+        height: auto;
+        pointer-events: none;
+        overflow: visible;
+
+        path {
+          fill: none;
+          stroke: currentColor;
+          stroke-width: 6;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-dasharray: 600;
+          stroke-dashoffset: 600;
+          transition: stroke-dashoffset 0.6s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &:hover .welcome-content h1 .scribble-underline path {
+    stroke-dashoffset: 0;
+  }
 }
 
 .container-with-title {
@@ -127,6 +157,38 @@ body {
   h2 {
     color: var(--text-color);
     font-size: var(--text-fluid-sm);
+  }
+
+  .scribble-title {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    cursor: default;
+
+    .scribble-overlapping {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      width: calc(100% + 80px);
+      height: calc(100% + 30px);
+      pointer-events: none;
+
+      path {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 12;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 3000;
+        stroke-dashoffset: 3000;
+        transition: stroke-dashoffset 0.8s ease-out;
+      }
+    }
+  }
+
+  &:hover .scribble-overlapping path {
+    stroke-dashoffset: 0;
   }
 }
 
