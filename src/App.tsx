@@ -124,20 +124,22 @@ function App() {
               className="about-container"
               bgColor={colors[1]}
               content={
-                <div className="flex flex-col gap-[24px] h-full justify-between">
-                  <p>
-                    I'm a UX engineer with over four years of experience in
-                    designing and building digital solutions. Throughout my
-                    career, I've worked mostly as a UX generalist, but I find
-                    the most purpose working at the intersection of design and
-                    code.
-                  </p>
-                  <p>
-                    These days I'm leaning more towards front-end development,
-                    focusing on building accessible, responsive, and
-                    user-friendly interfaces.
-                  </p>
-                  <button className="btn btn-soft resume-btn">
+                <div className="flex flex-col h-full justify-between">
+                  <div className="flex flex-col gap-[24px]">
+                    <p>
+                      I'm a UX engineer with over four years of experience in
+                      designing and building digital solutions. Throughout my
+                      career, I've worked mostly as a UX generalist, but I find
+                      the most purpose working at the intersection of design and
+                      code.
+                    </p>
+                    <p>
+                      These days I'm leaning more towards front-end development,
+                      focusing on building accessible, responsive, and
+                      user-friendly interfaces.
+                    </p>
+                  </div>
+                  <button className="btn btn-soft resume-btn flex-end">
                     Download CV
                     <i className="fa-solid fa-download fa-lg"></i>
                   </button>

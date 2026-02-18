@@ -50,15 +50,11 @@ const Controls = ({ onColorsChange }: ControlsProps) => {
     setColors(shuffleArray(colorOptions).slice(0, 5));
   };
 
-  const handleToggleDarkMode = () => {
-    setIsDarkMode((prev) => !prev);
-  };
-
   return (
     <div className="toggle-content">
-      <button
+      {/* <button
         onClick={handleToggleDarkMode}
-        className="btn btn-soft theme-toggle-btn"
+        className="btn btn-soft theme-toggle-btn toggle-lg"
         title="Toggle dark/light mode"
       >
         <i
@@ -67,14 +63,61 @@ const Controls = ({ onColorsChange }: ControlsProps) => {
           } theme-icon ${isDarkMode ? "icon-spin-in" : "icon-spin-in"}`}
           key={isDarkMode ? "moon" : "sun"}
         />
-      </button>
+      </button> */}
       <button
         onClick={handleShuffleColors}
-        className="btn btn-soft shuffle-btn"
+        className="btn btn-soft btn-circle shuffle-btn"
         title="Shuffle container colors"
       >
         <i className="fa-solid fa-shuffle"></i>
       </button>
+      <label className="toggle text-base-content toggle-xl">
+        <input
+          type="checkbox"
+          value="synthwave"
+          className="theme-controller"
+          checked={isDarkMode}
+          onChange={(event) => setIsDarkMode(event.target.checked)}
+        />
+        <svg
+          aria-label="sun"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <g
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeWidth="2"
+            fill="none"
+            stroke="currentColor"
+          >
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </g>
+        </svg>
+        <svg
+          aria-label="moon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <g
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeWidth="2"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </g>
+        </svg>
+      </label>
     </div>
   );
 };

@@ -5,7 +5,8 @@ const Footer = () => {
     <footer>
       <ContactLinks />
       <span>
-        designed and built by angela jordanova &copy; {new Date().getFullYear()}
+        built with lots of <i className="fa-solid fa-mug-hot" />
+        &nbsp; by Angela Jordanova
       </span>
     </footer>
   );
