@@ -396,22 +396,6 @@ section {
     i {
       color: var(--text-color);
     }
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      background-color: rgba(0, 0, 0, 0.05);
-      border-radius: 50%;
-      inset: 0;
-      margin: auto;
-      transition: background-color 0.3s ease-in-out;
-    }
-
-    &:hover::before {
-      background-color: rgba(0, 0, 0, 0.15);
-    }
   }
 }
 
