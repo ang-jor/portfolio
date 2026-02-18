@@ -60,6 +60,19 @@ html {
   font-family: var(--font-family), sans-serif;
 }
 
+header {
+  @apply flex items-center justify-between p-[8px] md:mx-[24px];
+  color: var(--text-color);
+
+  .toggle-content {
+    @apply flex items-center gap-[16px] self-end;
+  }
+}
+
+.app-wrapper {
+  @apply flex flex-col;
+}
+
 main {
   @apply flex gap-[16px] flex-wrap p-[8px] md:p-[24px] relative;
 }
@@ -103,7 +116,7 @@ body {
 }
 
 .container-with-title {
-  @apply flex flex-col p-[24px] w-full rounded-[30px] min-w-[300px];
+  @apply flex flex-col p-[32px] w-full rounded-[30px] min-w-[300px];
   color: var(--text-color);
   transition: background-color 0.3s ease-in-out;
 
@@ -118,7 +131,7 @@ body {
 }
 
 .row {
-  @apply flex flex-wrap gap-[16px];
+  @apply flex gap-[16px];
 
   & > * {
     @apply flex-1;
@@ -139,6 +152,14 @@ body {
   & > * {
     @apply flex-1;
   }
+}
+
+.right-col {
+  /* @apply grow-2; */
+}
+
+.about-container {
+  @apply flex h-full flex-2;
 }
 
 .project-list {
@@ -355,7 +376,7 @@ section {
 }
 
 .contact-links {
-  @apply flex gap-[16px] h-[32px];
+  @apply flex gap-[16px] items-center justify-center;
 
   a {
     color: var(--text-color);
@@ -386,12 +407,12 @@ section {
 }
 
 .toggle-container {
-  @apply content-center rounded-[20px];
+  @apply content-center;
 }
 
-.toggle-content {
+/* .toggle-content {
   @apply flex items-center gap-[16px];
-}
+} */
 
 .theme-toggle-btn {
   background-color: var(--color-resume-button);
@@ -438,6 +459,11 @@ section {
   &:hover {
     background-color: var(--color-resume-button-hover);
   }
+}
+
+footer {
+  @apply flex flex-col md:flex-row items-center justify-between gap-[16px] p-[8px] md:mx-[24px] mt-auto;
+  color: var(--text-color);
 }
 
 @keyframes fadeIn {

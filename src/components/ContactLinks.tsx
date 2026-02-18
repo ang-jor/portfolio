@@ -12,6 +12,9 @@ export const ContactLinks: React.FC = () => {
       <a href="https://www.linkedin.com/in/angela-jordanova/" target="_blank">
         <i className="fa-brands fa-square-linkedin fa-xl"></i>
       </a>
+      <a href="https://www.linkedin.com/in/angela-jordanova/" target="_blank">
+        <i className="fa-brands fa-square-behance fa-xl"></i>
+      </a>
     </div>
   );
 };
