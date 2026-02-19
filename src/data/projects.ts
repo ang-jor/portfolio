@@ -37,7 +37,7 @@ export const projects: Project[] = [
     role: "Designer",
     timeline: "2024",
     tags: ["Figma", "UI/UX Design", "Mobile Design"],
-    link: "https://apps.apple.com/us/app/tikvesh-events/id6443730868",
+    link: "https://www.behance.net/gallery/244415659/Tikvesh-Events",
     description: [
       "Tikvesh Events is a mobile app designed for end users to browse upcoming events, explore venues and performers, and keep track of event tickets in one place. The goal of the project was to refresh the visual interface, simplify event discovery and ticket management, and create a smoother experience for guests to find events and validate their tickets. Since the app already had a defined visual identity, I started by creating wireframes to establish the new structure and user flow, before moving on to the high-fidelity mockups.",
       "The redesign focused on creating a modern, intuitive interface that makes it easy for users to discover events and manage their tickets seamlessly.",
@@ -45,8 +45,8 @@ export const projects: Project[] = [
     images: ["assets/projects/wireframes.png", "assets/projects/mockups.png"],
   },
   {
-    id: "pockety",
-    title: "Pockety",
+    id: "fledge",
+    title: "Fledge",
     info: "Mobile banking app for kids and teens.",
     role: "Designer",
     timeline: "2024",
@@ -65,6 +65,7 @@ export const projects: Project[] = [
     ],
     images: ["assets/projects/kids-cut.gif", "assets/projects/parents-cut.gif"],
     twoColumns: true,
+    link: "https://www.behance.net/gallery/244418535/Fledge",
   },
   {
     id: "course-catalog",
@@ -84,5 +85,6 @@ export const projects: Project[] = [
       "assets/projects/course-cover.png",
       "assets/projects/admin-requests.png",
     ],
+    link: "https://www.behance.net/gallery/243838109/Course-catalog",
   },
 ];

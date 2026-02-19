@@ -362,8 +362,8 @@ body {
     @apply flex flex-col justify-between;
   }
 
-  a {
-    @apply text-[var(--text-color)] mt-auto mb-[16px] flex items-center justify-center no-underline;
+  .external-link {
+    @apply link link-hover text-[var(--text-color)] flex items-center justify-center gap-[8px] mt-[32px];
   }
 }
 

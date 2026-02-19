@@ -110,11 +110,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           </section>
         ))}
         {link && (
-          <a href={link} target="_blank">
+          <a href={link} target="_blank" className="external-link">
             {link.includes("behance.net")
               ? "See more visuals on Behance"
-              : "View Project"}
-            <i className="fa-solid fa-arrow-up-right-from-square fa-lg"></i>
+              : "See live project"}
+            <i className="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         )}
       </div>
