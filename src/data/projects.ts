@@ -31,11 +31,11 @@ export const projects: Project[] = [
     twoColumns: true,
   },
   {
-    id: "tikvesh",
-    title: "Tikvesh",
+    id: "tikvesh-events",
+    title: "Tikvesh Events",
     info: "Winery events management mobile app.",
     role: "Designer",
-    timeline: "2024",
+    timeline: "2025",
     tags: ["Figma", "UI/UX Design", "Mobile Design"],
     link: "https://www.behance.net/gallery/244415659/Tikvesh-Events",
     description: [
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     title: "Fledge",
     info: "Mobile banking app for kids and teens.",
     role: "Designer",
-    timeline: "2024",
+    timeline: "2021",
     tags: [
       "Figma",
       "UI/UX Design",
@@ -78,7 +78,6 @@ export const projects: Project[] = [
     description: [
       "Designed a web application for an internal course catalog, created to support employee development and continuous education. The primary challenge was delivering a cohesive experience while accommodating three distinct user roles: employees, team leaders, and administrators.",
       "Each persona had different goals, from managing personal learning paths, to overseeing team education requests, to managing and adding courses. I structured the experience to remain consistent at its core, while layering in role-specific functionality where needed.",
-      // add one more photo for this
       "Another key consideration throughout the project was scalability. Internal tools like this naturally evolve over time, so I focused on creating a flexible structure that could accommodate future feature requests and content expansion without disrupting the overall experience.",
     ],
     images: [

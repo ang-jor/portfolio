@@ -32,6 +32,7 @@ interface ControlsProps {
 
 const Controls = ({ onColorsChange }: ControlsProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMotionDisabled, setIsMotionDisabled] = useState(false);
   const [colors, setColors] = useState(defaultColors);
 
   useEffect(() => {
@@ -43,6 +44,14 @@ const Controls = ({ onColorsChange }: ControlsProps) => {
   }, [isDarkMode]);
 
   useEffect(() => {
+    if (isMotionDisabled) {
+      document.documentElement.classList.add("no-motion");
+    } else {
+      document.documentElement.classList.remove("no-motion");
+    }
+  }, [isMotionDisabled]);
+
+  useEffect(() => {
     onColorsChange?.(colors);
   }, [colors, onColorsChange]);
 
@@ -52,18 +61,15 @@ const Controls = ({ onColorsChange }: ControlsProps) => {
 
   return (
     <div className="toggle-content">
-      {/* <button
-        onClick={handleToggleDarkMode}
-        className="btn btn-soft theme-toggle-btn toggle-lg"
-        title="Toggle dark/light mode"
+      <button
+        onClick={() => setIsMotionDisabled((previous) => !previous)}
+        className="btn btn-soft btn-circle shuffle-btn"
+        title={isMotionDisabled ? "Enable animations" : "Disable animations"}
       >
         <i
-          className={`fa-solid ${
-            isDarkMode ? "fa-moon" : "fa-sun"
-          } theme-icon ${isDarkMode ? "icon-spin-in" : "icon-spin-in"}`}
-          key={isDarkMode ? "moon" : "sun"}
-        />
-      </button> */}
+          className={`fa-solid ${isMotionDisabled ? "fa-play" : "fa-pause"}`}
+        ></i>
+      </button>
       <button
         onClick={handleShuffleColors}
         className="btn btn-soft btn-circle shuffle-btn"

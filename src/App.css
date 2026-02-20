@@ -6,7 +6,8 @@
 :root {
   /*COLORS*/
   --body-bg-color: white;
-  --text-color: rgba(0, 0, 0, 0.85);
+  --main-text-color: rgba(0, 0, 0, 0.85);
+  --secondary-text-color: rgba(43, 43, 43, 0.85);
   --modal-bg-color: #f4f4f4;
   --color-intro: #cae7b9;
   --color-about: #f3de8a;
@@ -35,7 +36,8 @@
 html.dark-mode {
   /*COLORS - DARK MODE*/
   --body-bg-color: #1a1a1a;
-  --text-color: #fdfdfd;
+  --main-text-color: #fdfdfd;
+  --secondary-text-color: rgba(238, 238, 238, 0.85);
   --modal-bg-color: #2f2f2f;
   --color-intro: #5a7d54;
   --color-about: #8b7d3a;
@@ -46,6 +48,18 @@ html.dark-mode {
   --color-toggle-bg: #5c5455;
   --color-resume-button: #46515f;
   --color-resume-button-hover: #2b3139;
+}
+
+html.no-motion *,
+html.no-motion *::before,
+html.no-motion *::after {
+  animation: none !important;
+  transition: none !important;
+
+  .scribble-overlapping,
+  .scribble-underline {
+    display: none;
+  }
 }
 
 html {
@@ -62,7 +76,7 @@ html {
 
 header {
   @apply flex items-center justify-between p-[16px] md:mx-[24px];
-  color: var(--text-color);
+  color: var(--main-text-color);
 
   .toggle-content {
     @apply flex items-center gap-[16px] self-end;
@@ -90,7 +104,7 @@ body {
   transition: background-color 0.3s ease-in-out;
 
   p {
-    color: var(--text-color);
+    color: var(--main-text-color);
   }
 }
 
@@ -107,7 +121,7 @@ body {
 
   .welcome-content {
     @apply flex flex-col text-center justify-center p-[24px];
-    color: var(--text-color);
+    color: var(--main-text-color);
 
     h1 {
       font-size: var(--text-fluid-xl);
@@ -147,15 +161,15 @@ body {
 
 .container-with-title {
   @apply flex flex-col p-[32px] w-full rounded-[30px] min-w-[300px];
-  color: var(--text-color);
+  color: var(--main-text-color);
   transition: background-color 0.3s ease-in-out;
 
   p {
-    color: var(--text-color);
+    color: var(--main-text-color);
   }
 
   h2 {
-    color: var(--text-color);
+    color: var(--main-text-color);
     font-size: var(--text-fluid-sm);
   }
 
@@ -239,13 +253,14 @@ body {
       }
 
       h3 {
-        color: var(--text-color);
+        @apply lowercase;
+        color: var(--main-text-color);
         font-size: var(--text-fluid-base);
         font-weight: 600;
       }
 
       p {
-        color: var(--text-color);
+        color: var(--secondary-text-color);
         font-size: var(--text-fluid-xs);
       }
 
@@ -260,7 +275,7 @@ body {
       }
 
       a.link {
-        color: var(--text-color);
+        color: var(--main-text-color);
         @apply flex items-center justify-center  no-underline;
         position: relative;
         padding: 8px;
@@ -292,7 +307,7 @@ body {
       }
 
       button.link {
-        color: var(--text-color);
+        color: var(--main-text-color);
         @apply flex items-center justify-center border-none bg-none cursor-pointer no-underline;
         position: relative;
         padding: 8px;
@@ -345,7 +360,7 @@ body {
 
     span,
     i {
-      color: var(--text-color);
+      color: var(--main-text-color);
     }
   }
 
@@ -355,7 +370,7 @@ body {
   }
 
   .alert {
-    @apply mb-[24px] text-[var(--text-col500or)] border-[var(--text-color)];
+    @apply mb-[24px] text-[var(--text-col500or)] border-[var(--main-text-color)];
   }
 
   .modal-body {
@@ -363,7 +378,7 @@ body {
   }
 
   .external-link {
-    @apply link link-hover text-[var(--text-color)] flex items-center justify-center gap-[8px] mt-[32px];
+    @apply link link-hover text-[var(--main-text-color)] flex items-center justify-center gap-[8px] mt-[32px];
   }
 }
 
@@ -374,13 +389,13 @@ body {
 }
 
 h2 {
-  color: var(--text-color);
+  color: var(--main-text-color);
   @apply mb-[24px];
   font-size: var(--text-fluid-base);
 }
 
 p {
-  color: var(--text-color);
+  color: var(--main-text-color);
   font-size: var(--text-fluid-sm);
 }
 
@@ -394,7 +409,7 @@ p {
 
 .modal-close {
   @apply absolute top-[16px] right-[16px] bg-none border-none cursor-pointer flex items-center justify-center;
-  color: var(--text-color);
+  color: var(--main-text-color);
   padding: 8px;
 
   &:hover {
@@ -442,13 +457,13 @@ section {
   @apply flex gap-[16px] items-center justify-center;
 
   a {
-    color: var(--text-color);
+    color: var(--main-text-color);
     @apply flex items-center justify-center;
     position: relative;
     padding: 8px;
 
     i {
-      color: var(--text-color);
+      color: var(--main-text-color);
     }
   }
 }
@@ -519,7 +534,7 @@ section {
 
 footer {
   @apply flex flex-col md:flex-row items-center justify-between gap-[16px] p-[16px] md:mx-[24px] mt-auto text-center;
-  color: var(--text-color);
+  color: var(--main-text-color);
 }
 
 @keyframes fadeIn {
