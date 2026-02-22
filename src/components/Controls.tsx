@@ -1,4 +1,11 @@
 import { useEffect, useState } from "react";
+import {
+  IconMoonFilled,
+  IconSunFilled,
+  IconPlayerPauseFilled,
+  IconPlayerPlayFilled,
+  IconPaintFilled,
+} from "@tabler/icons-react";
 
 const colorOptions = [
   "var(--color-intro)",
@@ -63,66 +70,32 @@ const Controls = ({ onColorsChange }: ControlsProps) => {
     <div className="toggle-content">
       <button
         onClick={() => setIsMotionDisabled((previous) => !previous)}
-        className="btn btn-soft btn-circle shuffle-btn"
+        className="filled-btn"
         title={isMotionDisabled ? "Enable animations" : "Disable animations"}
       >
-        <i
-          className={`fa-solid ${isMotionDisabled ? "fa-play" : "fa-pause"}`}
-        ></i>
+        {isMotionDisabled ? (
+          <IconPlayerPlayFilled size={24} />
+        ) : (
+          <IconPlayerPauseFilled size={24} />
+        )}
       </button>
       <button
         onClick={handleShuffleColors}
-        className="btn btn-soft btn-circle shuffle-btn"
+        className="filled-btn"
         title="Shuffle container colors"
       >
-        <i className="fa-solid fa-shuffle"></i>
+        <IconPaintFilled size={24} />
       </button>
       <label className="toggle text-base-content toggle-xl">
         <input
           type="checkbox"
-          value="synthwave"
+          value={isDarkMode ? "dark" : "light"}
           className="theme-controller"
           checked={isDarkMode}
           onChange={(event) => setIsDarkMode(event.target.checked)}
         />
-        <svg
-          aria-label="sun"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <g
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            strokeWidth="2"
-            fill="none"
-            stroke="currentColor"
-          >
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2"></path>
-            <path d="M12 20v2"></path>
-            <path d="m4.93 4.93 1.41 1.41"></path>
-            <path d="m17.66 17.66 1.41 1.41"></path>
-            <path d="M2 12h2"></path>
-            <path d="M20 12h2"></path>
-            <path d="m6.34 17.66-1.41 1.41"></path>
-            <path d="m19.07 4.93-1.41 1.41"></path>
-          </g>
-        </svg>
-        <svg
-          aria-label="moon"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <g
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            strokeWidth="2"
-            fill="none"
-            stroke="currentColor"
-          >
-            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-          </g>
-        </svg>
+        <IconSunFilled />
+        <IconMoonFilled />
       </label>
     </div>
   );

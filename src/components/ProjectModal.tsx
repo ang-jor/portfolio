@@ -1,4 +1,11 @@
 import React, { useEffect } from "react";
+import {
+  IconCalendarWeekFilled,
+  IconExternalLink,
+  IconInfoCircleFilled,
+  IconUserFilled,
+  IconX,
+} from "@tabler/icons-react";
 
 export interface ProjectModalProps {
   isOpen: boolean;
@@ -53,28 +60,15 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           onClick={onClose}
           aria-label="Close modal"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18 18 6M6 6l12 12"
-            />
-          </svg>
+          <IconX size={24} />
         </button>
         <h2>{title}</h2>
         <div className="info-row">
-          <i className="fa-solid fa-pen-ruler"></i>
+          <IconUserFilled size={20} />
           <span>{role}</span>
         </div>
         <div className="info-row">
-          <i className="fa-solid fa-calendar"></i>
+          <IconCalendarWeekFilled size={20} />
           <span>{timeline}</span>
         </div>
         <div className="modal-tags">
@@ -85,7 +79,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           ))}
         </div>
         {withAlert && (
-          <div role="alert" className="alert alert-info alert-dash">
+          <div role="alert" className="alert alert-soft">
+            <IconInfoCircleFilled size={24} />
             <span>
               This is a conceptual redesign of a real product I worked on
               professionally, but due to NDA restrictions, visuals and flows
@@ -101,11 +96,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           >
             <p>{text}</p>
             {images[index] && (
-              <img
-                src={images[index]}
-                alt={`${title} section ${index + 1}`}
-                className="mb-[48px]"
-              />
+              <img src={images[index]} alt={`${title} section ${index + 1}`} />
             )}
           </section>
         ))}
@@ -114,7 +105,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             {link.includes("behance.net")
               ? "See more visuals on Behance"
               : "See live project"}
-            <i className="fa-solid fa-arrow-up-right-from-square"></i>
+            <IconExternalLink />
           </a>
         )}
       </div>

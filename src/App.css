@@ -5,6 +5,8 @@
 /*VARIABLES*/
 :root {
   /*COLORS*/
+  --white: white;
+  --black: black;
   --body-bg-color: white;
   --main-text-color: rgba(0, 0, 0, 0.85);
   --secondary-text-color: rgba(43, 43, 43, 0.85);
@@ -16,8 +18,9 @@
   --color-experience: #eb9486;
   --color-contact: #a9c2cb;
   --color-toggle-bg: #a19194;
-  --color-resume-button: #2b3139;
-  --color-resume-button-hover: #1f2329;
+  --color-resume-button: #2d2d2d;
+  --color-resume-button-hover: rgb(15, 15, 15);
+  --color-info-panel: rgba(0, 0, 0, 0.075);
 
   /*TYPO*/
   --font-family: "Figtree";
@@ -46,8 +49,9 @@ html.dark-mode {
   --color-experience: #8b5a52;
   --color-contact: #5a7a84;
   --color-toggle-bg: #5c5455;
-  --color-resume-button: #46515f;
-  --color-resume-button-hover: #2b3139;
+  --color-resume-button: #2d2d2d;
+  --color-resume-button-hover: rgb(58, 58, 58);
+  --color-info-panel: rgba(0, 0, 0, 0.075);
 }
 
 html.no-motion *,
@@ -80,6 +84,10 @@ header {
 
   .toggle-content {
     @apply flex items-center gap-[16px] self-end;
+
+    .toggle {
+      @apply bg-[var(--color-resume-button)] border-0;
+    }
   }
 }
 
@@ -88,7 +96,7 @@ header {
 }
 
 main {
-  @apply flex gap-[16px] flex-wrap p-[8px] md:p-[24px] relative flex-col lg:flex-row;
+  @apply flex gap-[16px] flex-wrap p-[8px] md:p-[24px] relative flex-col md:flex-row;
 }
 
 body {
@@ -268,6 +276,7 @@ body {
         @apply flex flex-wrap gap-[8px] mt-[8px];
 
         .badge {
+          @apply rounded-[30px];
           background-color: rgba(0, 0, 0, 0.5);
           color: white;
           border: none;
@@ -349,6 +358,7 @@ body {
     @apply flex flex-wrap gap-[8px] mt-[8px] mb-[24px];
 
     .badge {
+      @apply rounded-[30px];
       background-color: rgba(0, 0, 0, 0.5);
       color: white;
       border: none;
@@ -357,11 +367,7 @@ body {
 
   .info-row {
     @apply flex items-center gap-[8px] mb-[8px];
-
-    span,
-    i {
-      color: var(--main-text-color);
-    }
+    color: var(--main-text-color);
   }
 
   .divider:before,
@@ -370,7 +376,7 @@ body {
   }
 
   .alert {
-    @apply mb-[24px] text-[var(--text-col500or)] border-[var(--main-text-color)];
+    @apply mb-[24px] text-[var(--secondary-text-color)] bg-[var(--color-info-panel)] border-0 rounded-[20px] p-[16px];
   }
 
   .modal-body {
@@ -422,7 +428,7 @@ p {
 }
 
 section {
-  @apply flex gap-[40px] m-auto w-[80%];
+  @apply flex gap-[40px] mx-auto my-[32px] w-[80%];
 
   p {
     @apply content-center;
@@ -457,24 +463,16 @@ section {
   @apply flex gap-[16px] items-center justify-center;
 
   a {
-    color: var(--main-text-color);
-    @apply flex items-center justify-center;
+    @apply flex items-center justify-center bg-[var(--color-resume-button)];
+    color: var(--white);
     position: relative;
     padding: 8px;
-
-    i {
-      color: var(--main-text-color);
-    }
   }
 }
 
 .toggle-container {
   @apply content-center;
 }
-
-/* .toggle-content {
-  @apply flex items-center gap-[16px];
-} */
 
 .theme-toggle-btn {
   background-color: var(--color-resume-button);
@@ -505,9 +503,20 @@ section {
   }
 }
 
-.shuffle-btn {
+.filled-btn {
   background-color: var(--color-resume-button);
-  @apply text-white;
+  @apply text-white p-[8px] rounded-[20px] shadow-none;
+
+  &:hover {
+    background-color: var(--color-resume-button-hover);
+    cursor: pointer;
+  }
+}
+
+.resume-btn {
+  background-color: var(--color-resume-button);
+  @apply text-white rounded-[60px] min-h-[64px] shadow-none self-end w-fit border-0;
+  font-size: var(--text-fluid-xs);
 
   &:hover {
     background-color: var(--color-resume-button-hover);
@@ -518,23 +527,17 @@ section {
   @apply rounded-[20px] h-[40px] w-[60px] bg-[var(--color-resume-button)] relative cursor-pointer;
 
   &::before {
-    @apply rounded-[20px];
-  }
-}
-
-.resume-btn {
-  background-color: var(--color-resume-button);
-  @apply text-white rounded-[20px] min-h-[64px] shadow-none self-end w-fit;
-  font-size: var(--text-fluid-xs);
-
-  &:hover {
-    background-color: var(--color-resume-button-hover);
+    @apply rounded-[20px] bg-[var(--white)];
   }
 }
 
 footer {
   @apply flex flex-col md:flex-row items-center justify-between gap-[16px] p-[16px] md:mx-[24px] mt-auto text-center;
   color: var(--main-text-color);
+
+  span {
+    @apply flex items-center gap-[8px];
+  }
 }
 
 @keyframes fadeIn {

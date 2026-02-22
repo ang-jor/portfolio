@@ -10,10 +10,9 @@ export const projects: Project[] = [
     timeline: "2025-2026",
     tags: ["Figma", "React", "TypeScript", "Tailwind", "DaisyUI"],
     description: [
-      "When looking for visual inspiration, I went back to where everything started for me over 10 years ago - Tumblr. Customizing blog themes and tweaking existing layouts was my first real touchpoint with HTML and CSS. Revisiting those themes sparked the idea for what this portfolio would become. Designed in Figma, built with React TSX and styled with TailwindCSS and DaisyUI. After spending the past few years working on large, established codebases, it felt refreshing to build something entirely from scratch again.",
+      "When looking for visual inspiration, I went back to where everything started for me over 10 years ago - Tumblr. Customizing blog themes and tweaking existing layouts was my first real touchpoint with HTML and CSS. Revisiting those themes sparked the idea for what this portfolio would become.",
+      "Designed in Figma, built with React TSX and styled with TailwindCSS and DaisyUI. After spending the past few years working on large, established codebases, it felt refreshing to build something entirely from scratch again.",
     ],
-    images: ["/images/ang-jor/cover.png"],
-    twoColumns: true,
   },
   {
     id: "metalmancy",

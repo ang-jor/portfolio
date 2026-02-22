@@ -2,10 +2,10 @@ import "./App.css";
 import { useState } from "react";
 import Container from "./components/Container.tsx";
 import ProjectList from "./components/ProjectList.tsx";
-
 import Footer from "./components/Footer.tsx";
 import { ProjectModal } from "./components/ProjectModal.tsx";
 import Header from "./components/Header.tsx";
+import { IconDownload } from "@tabler/icons-react";
 
 const introContent = (
   <div className="welcome-content">
@@ -141,7 +141,8 @@ function App() {
                   </div>
                   <button className="btn btn-soft resume-btn flex-end">
                     Download CV
-                    <i className="fa-solid fa-download fa-lg"></i>
+                    {/* <HugeiconsIcon icon={Download01Icon} strokeWidth={2} /> */}
+                    <IconDownload size={24} />
                   </button>
                 </div>
               }

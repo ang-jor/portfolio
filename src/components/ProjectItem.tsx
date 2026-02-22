@@ -1,4 +1,5 @@
 import React from "react";
+import { IconChevronRight, IconExternalLink } from "@tabler/icons-react";
 
 export interface ProjectItemProps {
   title: string;
@@ -53,6 +54,18 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
           </div>
         </div>
         <div className="project-item-actions">
+          {externalLink && !externalLink.includes("behance.net") && (
+            <a
+              className="link"
+              href={externalLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit external link"
+            >
+              {/* <HugeiconsIcon icon={LinkSquare01Icon} strokeWidth={2} /> */}
+              <IconExternalLink />
+            </a>
+          )}
           {description && (
             <button
               className="link"
@@ -72,19 +85,9 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
               }}
               aria-label="View project details"
             >
-              <i className="fa-solid fa-expand fa-lg"></i>
+              {/* <HugeiconsIcon icon={ArrowRight01Icon} strokeWidth={2} /> */}
+              <IconChevronRight />
             </button>
-          )}
-          {externalLink && (
-            <a
-              className="link"
-              href={externalLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit external link"
-            >
-              <i className="fa-solid fa-arrow-up-right-from-square fa-lg"></i>
-            </a>
           )}
         </div>
       </div>
