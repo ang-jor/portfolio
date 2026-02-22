@@ -61,7 +61,8 @@ html.no-motion *::after {
   transition: none !important;
 
   .scribble-overlapping,
-  .scribble-underline {
+  .scribble-underline,
+  .scribble-steam {
     display: none;
   }
 }
@@ -506,6 +507,7 @@ section {
 .filled-btn {
   background-color: var(--color-resume-button);
   @apply text-white p-[8px] rounded-[20px] shadow-none;
+  transition: background-color 0.2s ease-in-out;
 
   &:hover {
     background-color: var(--color-resume-button-hover);
@@ -537,6 +539,48 @@ footer {
 
   span {
     @apply flex items-center gap-[8px];
+
+    &:hover .scribble-steam path {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .coffee-animation {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    cursor: default;
+
+    .coffee-cup {
+      width: 26px;
+      height: 26px;
+
+      path {
+        fill: var(--main-text-color);
+      }
+    }
+
+    .scribble-steam {
+      position: absolute;
+      bottom: 100%;
+      left: 40%;
+      translate: -50% 0;
+      width: calc(100% + 40px);
+      height: 24px;
+      pointer-events: none;
+
+      path {
+        fill: none;
+        stroke: var(--main-text-color);
+        stroke-width: 25;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 3000;
+        stroke-dashoffset: 3000;
+        transition: stroke-dashoffset 0.8s ease-out;
+      }
+    }
   }
 }
 

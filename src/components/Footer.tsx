@@ -1,5 +1,5 @@
+import CoffeeAnimation from "./CoffeeAnimation";
 import ContactLinks from "./ContactLinks";
-import { IconCoffee } from "@tabler/icons-react";
 
 const Footer = () => {
   return (
@@ -7,7 +7,7 @@ const Footer = () => {
       <ContactLinks />
       <span>
         built with lots of
-        <IconCoffee strokeWidth={1.3} />
+        <CoffeeAnimation />
         by Angela Jordanova
       </span>
     </footer>
