@@ -38,7 +38,10 @@ interface ControlsProps {
 }
 
 const Controls = ({ onColorsChange }: ControlsProps) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // Initialize from user's system preference
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
   const [isMotionDisabled, setIsMotionDisabled] = useState(false);
   const [colors, setColors] = useState(defaultColors);
 
@@ -49,6 +52,16 @@ const Controls = ({ onColorsChange }: ControlsProps) => {
       document.documentElement.classList.remove("dark-mode");
     }
   }, [isDarkMode]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
 
   useEffect(() => {
     if (isMotionDisabled) {
