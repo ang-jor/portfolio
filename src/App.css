@@ -257,6 +257,14 @@ body {
   @apply flex h-full flex-2;
 }
 
+.about-content {
+  @apply flex flex-col h-full justify-between gap-[32px];
+}
+
+.about-text {
+  @apply flex flex-col gap-[24px];
+}
+
 .project-list {
   @apply flex flex-col;
 
