@@ -54,6 +54,12 @@ html.dark-mode {
   --color-info-panel: rgba(0, 0, 0, 0.075);
 }
 
+*:focus-visible {
+  outline: 6px double var(--main-text-color);
+  outline-offset: 2px;
+  border-radius: 20px;
+}
+
 html.no-motion *,
 html.no-motion *::before,
 html.no-motion *::after {
@@ -225,14 +231,6 @@ body {
 
 .col {
   @apply flex flex-col flex-1 gap-[16px] w-full;
-
-  & > * {
-    /* @apply flex-1; */
-  }
-}
-
-.right-col {
-  /* @apply grow-2; */
 }
 
 .about-container {
@@ -314,6 +312,11 @@ body {
 
       .project-item-actions {
         @apply flex gap-[16px];
+
+        a,
+        button {
+          @apply h-fit self-center;
+        }
       }
 
       button.link {

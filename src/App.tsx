@@ -124,7 +124,7 @@ function App() {
               className="about-container"
               bgColor={colors[1]}
               content={
-                <div className="flex flex-col h-full justify-between">
+                <div className="flex flex-col h-full justify-between gap-[32px]">
                   <div className="flex flex-col gap-[24px]">
                     <p>
                       I'm a UX engineer with over four years of experience in
@@ -141,7 +141,6 @@ function App() {
                   </div>
                   <button className="btn btn-soft resume-btn flex-end">
                     Download CV
-                    {/* <HugeiconsIcon icon={Download01Icon} strokeWidth={2} /> */}
                     <IconDownload size={24} />
                   </button>
                 </div>
