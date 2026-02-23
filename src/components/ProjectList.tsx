@@ -21,9 +21,8 @@ const ProjectList: React.FC<ProjectListProps> = ({ onOpenModal }) => {
   return (
     <div className="project-list">
       {projects.map((project, idx) => (
-        <>
+        <React.Fragment key={project.id}>
           <ProjectItem
-            key={project.id}
             title={project.title}
             info={project.info}
             role={project.role}
@@ -37,7 +36,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ onOpenModal }) => {
             twoColumns={project.twoColumns}
           />
           {idx < projects.length - 1 && <div className="divider" />}
-        </>
+        </React.Fragment>
       ))}
     </div>
   );

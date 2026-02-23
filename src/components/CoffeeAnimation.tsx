@@ -12,8 +12,8 @@ const CoffeeAnimation = () => {
         <path
           d="M192.859 338.665C110.039 214.435 366.392 229.141 296.113 170.498C254.973 136.168 154.608 190.939 116.58 204.703C-56.1866 267.234 33.1794 -27.5996 181.395 29.3538C194.936 34.5569 233.885 81.9932 204.617 91.749"
           stroke="black"
-          stroke-width="44"
-          stroke-linecap="round"
+          strokeWidth="44"
+          strokeLinecap="round"
         />
       </svg>
       <svg
