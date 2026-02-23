@@ -20,6 +20,7 @@
   --color-toggle-bg: #a19194;
   --color-resume-button: #2d2d2d;
   --color-resume-button-hover: rgb(15, 15, 15);
+  --color-info-panel: rgba(0, 0, 0, 0.075);
   --color-scrollbar: rgba(0, 0, 0, 0.199);
 
   /*TYPO*/
@@ -52,6 +53,7 @@ html.dark-mode {
   --color-resume-button: #2d2d2d;
   --color-resume-button-hover: rgb(58, 58, 58);
   --color-info-panel: rgba(0, 0, 0, 0.075);
+  --color-scrollbar: rgba(255, 255, 255, 0.199);
 }
 
 /* SCROLLBAR */
@@ -370,6 +372,14 @@ body {
   animation: fadeIn 0.3s ease-in-out;
   background-color: var(--modal-bg-color);
 
+  .modal-header {
+    @apply flex;
+
+    .project-info {
+      @apply flex-1;
+    }
+  }
+
   .modal-scrollable {
     @apply overflow-auto p-[32px] h-full flex flex-col;
   }
@@ -404,7 +414,7 @@ body {
   }
 
   .alert {
-    @apply mb-[24px] text-[var(--secondary-text-color)] bg-[var(--color-info-panel)] border-0 rounded-[20px] p-[16px];
+    @apply w-fit mb-[24px] text-[var(--secondary-text-color)] bg-[var(--color-info-panel)] border-0 rounded-[20px] p-[16px];
   }
 
   .modal-body {
@@ -447,9 +457,10 @@ p {
 }
 
 .modal-close {
-  @apply absolute top-[16px] right-[16px] bg-none border-none cursor-pointer flex items-center justify-center;
   color: var(--main-text-color);
-  padding: 8px;
+  align-self: start;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
 
   &:hover {
     opacity: 0.7;

@@ -56,39 +56,43 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
       <div className="modal-backdrop" onClick={onClose} />
       <div className="modal-container" style={{ backgroundColor: bgColor }}>
         <div className="modal-scrollable">
-          <button
-            className="modal-close"
-            onClick={onClose}
-            aria-label="Close modal"
-          >
-            <IconX size={24} />
-          </button>
-          <h2>{title}</h2>
-          <div className="info-row">
-            <IconUserFilled size={20} />
-            <span>{role}</span>
-          </div>
-          <div className="info-row">
-            <IconCalendarWeekFilled size={20} />
-            <span>{timeline}</span>
-          </div>
-          <div className="modal-tags">
-            {tags.map((tag) => (
-              <div key={tag} className="badge badge-ghost">
-                {tag}
+          <div className="modal-header">
+            <div className="project-info">
+              <h2>{title}</h2>
+              <div className="info-row">
+                <IconUserFilled size={20} />
+                <span>{role}</span>
               </div>
-            ))}
-          </div>
-          {withAlert && (
-            <div role="alert" className="alert alert-soft">
-              <IconInfoCircleFilled size={24} />
-              <span>
-                This is a conceptual redesign of a real product I worked on
-                professionally, but due to NDA restrictions, visuals and flows
-                have been recreated for portfolio purposes.
-              </span>
+              <div className="info-row">
+                <IconCalendarWeekFilled size={20} />
+                <span>{timeline}</span>
+              </div>
+              <div className="modal-tags">
+                {tags.map((tag) => (
+                  <div key={tag} className="badge badge-ghost">
+                    {tag}
+                  </div>
+                ))}
+              </div>
+              {withAlert && (
+                <div role="alert" className="alert alert-soft">
+                  <IconInfoCircleFilled size={24} />
+                  <span>
+                    This is a conceptual redesign of a real product I worked on
+                    professionally, but due to NDA restrictions, visuals and
+                    flows have been recreated for portfolio purposes.
+                  </span>
+                </div>
+              )}
             </div>
-          )}
+            <button
+              className="modal-close"
+              onClick={onClose}
+              aria-label="Close modal"
+            >
+              <IconX size={24} />
+            </button>
+          </div>
           <div className="divider" />
           <div className="modal-body">
             {description.map((text, index) => (
