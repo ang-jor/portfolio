@@ -140,6 +140,7 @@ body {
 
     h1 {
       font-size: var(--text-fluid-xl);
+      font-weight: 500;
 
       span {
         position: relative;
@@ -260,10 +261,8 @@ body {
       }
 
       h3 {
-        @apply lowercase;
         color: var(--main-text-color);
         font-size: var(--text-fluid-base);
-        font-weight: 600;
       }
 
       p {
@@ -370,8 +369,12 @@ body {
   }
 
   .info-row {
-    @apply flex items-center gap-[8px] mb-[8px];
-    color: var(--main-text-color);
+    @apply flex items-center gap-[8px] mb-[8px] text-sm;
+    color: var(--secondary-text-color);
+
+    svg {
+      @apply w-[16px] h-[16px];
+    }
   }
 
   .divider:before,
@@ -388,7 +391,7 @@ body {
   }
 
   .external-link {
-    @apply link link-hover text-[var(--main-text-color)] flex items-center justify-center gap-[8px] mt-[32px];
+    @apply link link-hover text-[var(--main-text-color)] w-fit m-auto flex gap-[8px] mt-[32px];
   }
 }
 
@@ -402,6 +405,7 @@ h2 {
   color: var(--main-text-color);
   @apply mb-[24px];
   font-size: var(--text-fluid-base);
+  font-weight: 500;
 }
 
 p {
