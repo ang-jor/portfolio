@@ -4,7 +4,7 @@
 
 /*VARIABLES*/
 :root {
-  /*COLORS*/
+  /*COLORS - LIGHT MODE*/
   --white: white;
   --black: black;
   --body-bg-color: white;
@@ -13,7 +13,7 @@
   --modal-bg-color: #f4f4f4;
   --color-intro: #cae7b9;
   --color-about: #f3de8a;
-  --color-projects: #ada6b5;
+  --color-projects: #a9c2cb;
   --color-project-badge: #71677c;
   --color-experience: #eb9486;
   --color-contact: #a9c2cb;
@@ -41,14 +41,14 @@ html.dark-mode {
   /*COLORS - DARK MODE*/
   --body-bg-color: #1a1a1a;
   --main-text-color: #fdfdfd;
-  --secondary-text-color: rgba(238, 238, 238, 0.85);
+  --secondary-text-color: rgba(238, 238, 238, 0.911);
   --modal-bg-color: #2f2f2f;
   --color-intro: #5a7d54;
-  --color-about: #8b7d3a;
-  --color-projects: #3d3946;
+  --color-about: #7b6e35;
+  --color-projects: #4b6973;
   --color-project-badge: #6b6370;
   --color-experience: #8b5a52;
-  --color-contact: #5a7a84;
+  --color-contact: #3d3946;
   --color-toggle-bg: #5c5455;
   --color-resume-button: #2d2d2d;
   --color-resume-button-hover: rgb(58, 58, 58);
@@ -143,10 +143,11 @@ body {
 }
 
 .img-container {
-  @apply max-w-[250px] max-h-[200px] min-w-[130px] min-h-[130px] hidden xl:flex;
+  @apply max-w-[190px] max-h-[190px] min-w-[130px] min-h-[130px] hidden xl:flex;
 
   img {
-    @apply w-full h-full object-cover;
+    @apply w-full h-full object-cover pointer-events-none;
+    overflow-clip-margin: unset;
   }
 }
 
@@ -593,7 +594,7 @@ section {
 }
 
 footer {
-  @apply flex flex-col md:flex-row items-center justify-between gap-[16px] p-[16px] md:mx-[24px] mt-auto text-center;
+  @apply flex flex-col md:flex-row items-center justify-between gap-[32px] md:gap-[16px] p-[16px] md:mx-[24px] mt-auto text-center;
   color: var(--main-text-color);
 
   span {

@@ -80,7 +80,7 @@ function App() {
                 hasImage
                 content={
                   <img
-                    src="../src/assets/me.jpg"
+                    src="../src/assets/me.png"
                     alt="me"
                     className="avatar-img"
                   />
