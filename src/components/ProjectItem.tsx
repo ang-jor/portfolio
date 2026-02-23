@@ -62,7 +62,6 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
               rel="noopener noreferrer"
               aria-label="Visit external link"
             >
-              {/* <HugeiconsIcon icon={LinkSquare01Icon} strokeWidth={2} /> */}
               <IconExternalLink />
             </a>
           )}
@@ -85,7 +84,6 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
               }}
               aria-label="View project details"
             >
-              {/* <HugeiconsIcon icon={ArrowRight01Icon} strokeWidth={2} /> */}
               <IconChevronRight />
             </button>
           )}
