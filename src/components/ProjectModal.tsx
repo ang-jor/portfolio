@@ -55,59 +55,68 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
     <>
       <div className="modal-backdrop" onClick={onClose} />
       <div className="modal-container" style={{ backgroundColor: bgColor }}>
-        <button
-          className="modal-close"
-          onClick={onClose}
-          aria-label="Close modal"
-        >
-          <IconX size={24} />
-        </button>
-        <h2>{title}</h2>
-        <div className="info-row">
-          <IconUserFilled size={20} />
-          <span>{role}</span>
-        </div>
-        <div className="info-row">
-          <IconCalendarWeekFilled size={20} />
-          <span>{timeline}</span>
-        </div>
-        <div className="modal-tags">
-          {tags.map((tag) => (
-            <div key={tag} className="badge badge-ghost">
-              {tag}
-            </div>
-          ))}
-        </div>
-        {withAlert && (
-          <div role="alert" className="alert alert-soft">
-            <IconInfoCircleFilled size={24} />
-            <span>
-              This is a conceptual redesign of a real product I worked on
-              professionally, but due to NDA restrictions, visuals and flows
-              have been recreated for portfolio purposes.
-            </span>
-          </div>
-        )}
-        <div className="divider" />
-        {description.map((text, index) => (
-          <section
-            key={index}
-            className={`modal-section${twoColumns ? " two-columns" : " single-column"}`}
+        <div className="modal-scrollable">
+          <button
+            className="modal-close"
+            onClick={onClose}
+            aria-label="Close modal"
           >
-            <p>{text}</p>
-            {images[index] && (
-              <img src={images[index]} alt={`${title} section ${index + 1}`} />
-            )}
-          </section>
-        ))}
-        {link && (
-          <a href={link} target="_blank" className="external-link">
-            {link.includes("behance.net")
-              ? "See more visuals on Behance"
-              : "See live project"}
-            <IconExternalLink />
-          </a>
-        )}
+            <IconX size={24} />
+          </button>
+          <h2>{title}</h2>
+          <div className="info-row">
+            <IconUserFilled size={20} />
+            <span>{role}</span>
+          </div>
+          <div className="info-row">
+            <IconCalendarWeekFilled size={20} />
+            <span>{timeline}</span>
+          </div>
+          <div className="modal-tags">
+            {tags.map((tag) => (
+              <div key={tag} className="badge badge-ghost">
+                {tag}
+              </div>
+            ))}
+          </div>
+          {withAlert && (
+            <div role="alert" className="alert alert-soft">
+              <IconInfoCircleFilled size={24} />
+              <span>
+                This is a conceptual redesign of a real product I worked on
+                professionally, but due to NDA restrictions, visuals and flows
+                have been recreated for portfolio purposes.
+              </span>
+            </div>
+          )}
+          <div className="divider" />
+          <div className="modal-body">
+            {description.map((text, index) => (
+              <section
+                key={index}
+                className={`modal-section${twoColumns ? " two-columns" : " single-column"}`}
+              >
+                <p>{text}</p>
+                {images[index] && (
+                  <img
+                    src={images[index]}
+                    alt={`${title} section ${index + 1}`}
+                  />
+                )}
+              </section>
+            ))}
+          </div>
+          {link && (
+            <div className="link-wrapper">
+              <a href={link} target="_blank" className="external-link">
+                {link.includes("behance.net")
+                  ? "See more visuals on Behance"
+                  : "See live project"}
+                <IconExternalLink />
+              </a>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
