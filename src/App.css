@@ -560,7 +560,7 @@ section {
 
 .resume-btn {
   background-color: var(--color-resume-button);
-  @apply text-white rounded-[60px] min-h-[64px] shadow-none self-end w-fit border-0;
+  @apply text-white rounded-[60px] min-h-[64px] shadow-none self-end w-full sm:w-fit border-0;
   font-size: var(--text-fluid-xs);
 
   &:hover {

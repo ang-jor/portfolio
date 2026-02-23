@@ -16,7 +16,6 @@ const CoffeeAnimation = () => {
           stroke-linecap="round"
         />
       </svg>
-
       <svg
         className="coffee-cup"
         width="800"
