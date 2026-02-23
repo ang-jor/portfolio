@@ -479,14 +479,22 @@ section {
   }
 
   &.two-columns {
-    @apply flex-row;
+    @apply flex-row items-center;
 
-    @media (width <= 64rem) {
+    @media (width <= 48rem) {
       @apply flex-col;
     }
 
     &:last-of-type {
       @apply flex-row-reverse;
+
+      @media (width <= 48rem) {
+        @apply flex-col;
+      }
+    }
+
+    img {
+      @apply w-[50%];
     }
   }
 
