@@ -39,7 +39,6 @@ interface ControlsProps {
 
 const Controls = ({ onColorsChange }: ControlsProps) => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    // Initialize from user's system preference
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
   const [isMotionDisabled, setIsMotionDisabled] = useState(false);

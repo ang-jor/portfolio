@@ -17,7 +17,7 @@ export const ContactLinks: React.FC = () => {
       >
         <IconBrandGithubFilled size={24} />
       </a>
-      <a href="mailto:ang.j8r@gmail.com" target="_blank" className="filled-btn">
+      <a href="mailto:hello@ang-jor.com" target="_blank" className="filled-btn">
         <IconMailFilled size={24} />
       </a>
       <a
