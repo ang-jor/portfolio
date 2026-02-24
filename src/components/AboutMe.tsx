@@ -15,7 +15,10 @@ const AboutMe = () => {
           building accessible, responsive, and user-friendly interfaces.
         </p>
       </div>
-      <button className="btn btn-soft resume-btn flex-end">
+      <button
+        className="btn btn-soft resume-btn flex-end"
+        onClick={() => window.open("assets/Angela_Jordanova_CV.pdf", "_blank")}
+      >
         Download CV
         <IconDownload size={24} />
       </button>

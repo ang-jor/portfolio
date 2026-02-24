@@ -79,11 +79,7 @@ function App() {
               <Container
                 hasImage
                 content={
-                  <img
-                    src="../src/assets/me.png"
-                    alt="me"
-                    className="avatar-img"
-                  />
+                  <img src="assets/me.png" alt="me" className="avatar-img" />
                 }
               />
               <Container
