@@ -94,7 +94,7 @@ const Controls = ({ onColorsChange }: ControlsProps) => {
       <button
         onClick={handleShuffleColors}
         className="filled-btn"
-        title="Shuffle container colors"
+        title="Shuffle colors"
       >
         <IconPaintFilled size={24} />
       </button>

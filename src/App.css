@@ -12,11 +12,11 @@
   --secondary-text-color: rgba(43, 43, 43, 0.85);
   --modal-bg-color: #f4f4f4;
   --color-intro: #cae7b9;
-  --color-about: #f3de8a;
+  --color-about: #eb9486;
   --color-projects: #a9c2cb;
   --color-project-badge: #71677c;
-  --color-experience: #eb9486;
-  --color-contact: #a9c2cb;
+  --color-experience: #f3de8a;
+  --color-contact: #ada6b5;
   --color-toggle-bg: #a19194;
   --color-resume-button: #2d2d2d;
   --color-resume-button-hover: rgb(15, 15, 15);
@@ -44,10 +44,10 @@ html.dark-mode {
   --secondary-text-color: rgba(238, 238, 238, 0.911);
   --modal-bg-color: #2f2f2f;
   --color-intro: #5a7d54;
-  --color-about: #7b6e35;
+  --color-about: #8b5a52;
   --color-projects: #4b6973;
   --color-project-badge: #6b6370;
-  --color-experience: #8b5a52;
+  --color-experience: #7b6e35;
   --color-contact: #3d3946;
   --color-toggle-bg: #5c5455;
   --color-resume-button: #2d2d2d;
@@ -118,6 +118,10 @@ p {
   font-size: var(--text-fluid-sm);
 }
 
+img {
+  @apply pointer-events-none;
+}
+
 .app-wrapper {
   @apply flex flex-col;
 }
@@ -176,7 +180,7 @@ main {
   @apply max-w-[190px] max-h-[190px] min-w-[130px] min-h-[130px] hidden xl:flex;
 
   img {
-    @apply w-full h-full object-cover pointer-events-none;
+    @apply w-full h-full object-cover;
     overflow-clip-margin: unset;
   }
 }
