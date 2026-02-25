@@ -307,7 +307,7 @@ main {
 
       h3 {
         color: var(--main-text-color);
-        font-size: var(--text-fluid-base);
+        font-size: var(--text-fluid-sm);
       }
 
       p {
@@ -413,7 +413,7 @@ main {
   }
 
   .alert {
-    @apply w-full mb-[24px] text-[var(--secondary-text-color)] bg-[var(--color-info-panel)] border-0 rounded-[20px] p-[16px];
+    @apply w-fit mb-[24px] text-[var(--secondary-text-color)] bg-[var(--color-info-panel)] border-0 rounded-[20px] p-[16px];
   }
 
   .modal-body {

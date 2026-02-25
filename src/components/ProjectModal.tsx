@@ -79,8 +79,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                   <IconInfoCircleFilled size={24} />
                   <span>
                     This is a conceptual redesign of a real product I worked on
-                    professionally, but due to NDA restrictions, visuals and
-                    flows have been recreated for portfolio purposes.
+                    professionally, visuals and flows have been recreated for
+                    portfolio purposes.
                   </span>
                 </div>
               )}
