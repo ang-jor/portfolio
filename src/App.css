@@ -512,19 +512,19 @@ footer {
     }
 
     .scribble-steam {
-      @apply absolute bottom-full left-[40%] -translate-x-1/2 translate-y-0 h-[24px] pointer-events-none;
+      @apply absolute bottom-full left-[40%] -translate-x-1/2 translate-y-0 h-[15px] pointer-events-none;
       translate: -50% 0;
       width: calc(100% + 40px);
 
       path {
         fill: none;
         stroke: var(--main-text-color);
-        stroke-width: 25;
+        stroke-width: 7;
         stroke-linecap: round;
         stroke-linejoin: round;
-        stroke-dasharray: 3000;
-        stroke-dashoffset: 3000;
-        transition: stroke-dashoffset 0.8s ease-out;
+        stroke-dasharray: 1;
+        stroke-dashoffset: -1;
+        transition: stroke-dashoffset 0.4s ease-out;
       }
     }
   }
